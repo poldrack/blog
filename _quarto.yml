@@ -1,6 +1,7 @@
 project:
   type: website
-  output-dir: ../docs
+  output-dir: docs
+
 
 website:
   title: "Russ Poldrack's blog"
@@ -14,7 +15,7 @@ website:
         href: https://mastodon.online/@Russpoldrack
 format:
   html:
-    theme: cosmo
+    theme: flatly
     css: styles.css
 
 
