@@ -1,0 +1,9 @@
+---
+date: "2014/03/16"
+title: "532 days of self-examination"
+author: "Russ Poldrack"
+---
+
+*This was originally posted on blogger [here](https://russpoldrack.blogspot.com/2014/03/532-days-of-self-examination.html)*.
+
+Last Tuesday we collected the final MRI scan and blood draw for the [MyConnectome](http://www.myconnectome.org/) project.Here I am emerging from the scanner on March 11, after the 104th MRI scan (photo: Mei-Yen Chen)The study started on 9/25/2012 and ended on 3/11/2014, for a total of 532 days.  During this time we performed 104 MRI scanning sessions and 48 blood draws.  After excluding some of the data for quality control we are left with:88 resting state fMRI scans20 diffusion weighted imaging scans13 anatomical (T1/T2-weighted) scans18 breath-holding fMRI scans15 N-back task scans9 dot-motion/stop signal task scans8 object localizer scans5 language localizer scans4 spatial working memory localizer scansNow comes the fun part, which is analyzing all of these data (which, with imaging and genomics data together, comprise more than 3 TB of data).  Fortunately we have the awesome computing resources of the [Texas Advanced Computing Center](https://portal.tacc.utexas.edu/), along with the computing resources at Washington University in St. Louis where our collaborators are also analyzing the data.  We will be presenting some of the early results at the Organization for Human Brain Mapping meeting in Hamburg in June and the [ICON meeting ](http://www.icon2014.org/ehome/icon2014/welcome/?&)in Brisbane in July, and hope to have an initial paper submitted later this year.  More soon!

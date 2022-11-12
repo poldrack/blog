@@ -1,0 +1,46 @@
+---
+date: "2016/05/20"
+title: "Advice for learning to code from scratch"
+author: "Russ Poldrack"
+---
+
+*This was originally posted on blogger [here](https://russpoldrack.blogspot.com/2016/05/advice-for-learning-to-code-from-scratch.html)*.
+
+I met this week with a psychology student who was interested in learning to code but had absolutely no experience.  I personally think it’s a travesty that programming is not part of the basic psychology curriculum, because doing novel and interesting research in psychology increasingly requires the ability to collect and work with large datasets and build new analysis tools, which are almost impossible without solid coding skills.  Because it’s been a while since I learned to code ([back when programs were stored on cassette tapes](http://www.russpoldrack.org/2010/11/my-personal-computing-history.html)), I decided to ask my friends on the interwebs for some suggestions.  I got some really great feedback, which I thought I would synthesize for others who might be in the same boat.  Some of the big questions that one should probably answer before getting started are:Why do you want to learn to code?  For most people who land in my office, it’s because they want to be able to analyze and wrangle data, run simulations, implement computational models, or create experiments to collect data.  How do you learn best?  I can’t stand watching videos, but some people swear by them.  Some people like to just jump in and start doing, whereas others like to learn the concepts and theories first.  Different strokes...What language should you start with?  This is the stuff of religious wars.  What’s important to realize, though, is that learning to program is not the same as learning to use a specific language.  Programming is about how to think algorithmically to solve problems; the specific language is just an expression of that thinking.  That said, languages differ in lots of ways, and some are more useful than others for particular purposes.  My feeling is that one should start by learning a first-class language, because it will be easier to learn good practices that are more general.  Your choice of a general purpose language should probably be driven by the field you are in; neuroscientists are increasingly turning to Python, whereas in genomics it seems that Java is very popular.  I personally think that Python offers a nice mix of power and usability, and it’s the language that I encourage everyone to start with.  However, if all you care about doing it performing statistical analyses, then learning R might be your first choice, whereas if you just want to build experiments for mTurk, then Javascript might be the answer.  There may be some problem for which MATLAB is the right answer, but I’m no longer sure what it is. A caveat to all of this is that if you have friends or colleagues who are programming, then you should strongly consider using whatever language they are using, because they will be your best source of help.What problem do you want to solve?  Some people can learn for the sake of learning, but I find that I need a problem in order to keep me motivated.  I would recommend thinking of a relevant problem that you want to solve and then targeting your learning towards that problem.  One good general strategy is to find a paper in your area of research interest, and try to implement their analysis. Another (suggested by Christina van Heer) is to take some data output from an experiment (e.g. in an Excel file), read it in, and compute some basic statistics.  If you don't have your own data, another alternative is to take a large open dataset (such as health data from [NHANES](http://www.cdc.gov/nchs/nhanes/) or an openfmri dataset from [openfmri.org](http://openfmri.org/) ) and try to wrangle the data into a format that lets you ask an interesting question.OK then, so where do you look for help in getting started?The overwhelming favorite in my social media poll was [codeacademy](http://codeacademy.com/).  It offers interactive exercises in lots of different languages, including Python.  Another Pythonic suggestion was [http://learnpythonthehardway.org/book/](http://learnpythonthehardway.org/book/) which looks quite good. For those of you who prefer video courses, there were also a number of votes for online courses, including those from Coursera:[“Python for Everybody” ](https://www.coursera.org/learn/python)["An Introduction to Interactive Programming with Python"](https://www.coursera.org/learn/interactive-python-1?trk=profile_certification_title)EdX:[Introduction to R for data science](https://www.edx.org/course/introduction-r-data-science-microsoft-dat204x)[Harvard’s Introduction to Computer Science ](https://www.edx.org/course/introduction-computer-science-harvardx-cs50x)And  FutureLearn:[Learn to Code for Data Analysis ](https://www.futurelearn.com/courses/learn-to-code)If you like video courses then these would be a good option.  Other suggestions included:[Learning statistics with R: A tutorial for psychologists and other beginners ](http://health.adelaide.edu.au/psychology/ccs/docs/lsr/lsr-0.3.pdf)(free pdf book)[[http://pythontutor.com](http://pythontutor.com/)](http://pythontutor.com/)[http://pythontutor.com](http://pythontutor.com/) - this looks like a pretty cool tool to help see what a program is doing when it runs[http://tryr.codeschool.com](http://tryr.codeschool.com/)[codemonkey](https://www.playcodemonkey.com/) (coding in a game environment)[Swirl for R ](http://swirlstats.com/)[Python for Vision Research](http://gestaltrevision.be/wiki/python/python)[Programming for Psychology in Pytho](http://www.djmannion.net/programming_vision/)n[Datacamp](http://datacamp.com/)[lynda.com](http://lynda.com/) (commercial, but offers a free trial) Here are some suggested sites with various potentially useful tips[Resources for Learning to Program using Python and Code Experiments Using Psychopy](http://neurofractal.tumblr.com/post/114928822703/resources-for-learning-to-program-using-python-and) [Reading Python source code to improve programming skill](http://stackoverflow.com/questions/3605337/reading-python-source-code-to-improve-programming-skills/3605360)s[Introduction to R](https://ramnathv.github.io/pycon2014-r/)[6 inspiring web sites that teach you to cod](http://imgur.com/gallery/BL6Vs)e[Kendrick Kay's course on Statistics and Data Analysis in MATLAB](http://kendrickkay.net/psych5007/)Several people recommended [Spyder](https://pythonhosted.org/spyder/) as a development environment for Python (though I gave up on it because I found it to be too sluggish on the Mac)[Here is a nice curated list of python tutorials for data science and machine learning](https://github.com/ujjwalkarn/DataSciencePython)[9 places you can learn how to code (for free)](http://www.inc.com/larry-kim/9-places-you-can-learn-how-to-code-for-free.html)Finally, it’s also worth keeping an eye out for local Software Carpentry workshops.If you have additional suggestions, please leave them in the comments!
+
+---
+
+## 8 comments captured from [original post](https://russpoldrack.blogspot.com/2016/05/advice-for-learning-to-code-from-scratch.html) on Blogger
+
+**Breeding in Captivity said on 2016-05-20**
+
+For Matlab (I know, soooo old-fashioned) the easiest way to start is probably Geoff and my book<br /><br />http://www.amazon.com/Matlab-Behavioral-Sciences-Program-Experiment/dp/0195320689/ref=sr_1_1?ie=UTF8&amp;qid=1463778426&amp;sr=8-1&amp;keywords=matlab+for+the+behavioral+sciences<br />
+
+**Joe Orr said on 2016-05-20**
+
+Do you have any thoughts/ recommendations on how to establish coding in the psych undergraduate curriculum?
+
+**Unknown said on 2016-05-20**
+
+Surely C/C++ should be mentioned? They're hard, yes, but my God will you learn a lot.
+
+**Leonardo said on 2016-05-22**
+
+Sure, but where to stop? Why not recommend some Lisp or Haskell? <br />C was the first programming language I learned, but I feel its current relevance is only for performance optimization, not for science.
+
+**Unknown said on 2016-05-24**
+
+I also recommend the series of books by Allen Downey (e.g. Think Python), available free online at http://greenteapress.com/wp/
+
+**Unknown said on 2016-05-31**
+
+Late to the game here but PyQuick from Google was a great way for me to get started with Python.<br /><br />https://developers.google.com/edu/python/introduction
+
+**Unknown said on 2016-07-17**
+
+Nice, I really like DJ Mannions lectures. They are really good for a Psychologist wanting to learn programming.   Personally, I think that if you manage to learn Python, which is a quite easy language to learn, you can learn more advanced languages later.   <br /><br />I also would like to add a very recent guide on how to use Python programming in Psychology. I came across this post <a href="http://blog.efpsa.org/2016/07/12/python-programming-in-psychology-from-data-collection-to-analysis" rel="nofollow">Python programming in Psychology</a>. In that post you get to learn how to use Python from creating your experiment to visualizing and analysing collected data.
+
+**Nickole Dinardo said on 2016-10-29**
+
+No doubt it's impressive post.
+

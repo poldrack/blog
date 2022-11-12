@@ -1,0 +1,38 @@
+---
+date: "2011/10/01"
+title: "NYT Op-Ed + fMRI = complete crap"
+author: "Russ Poldrack"
+---
+
+*This was originally posted on blogger [here](https://russpoldrack.blogspot.com/2011/10/nyt-editorial-fmri-complete-crap.html)*.
+
+Many of you may remember the controversy that arose a few years back when the NY Times published an Op-Ed titled "[This is your brain on politics](http://www.nytimes.com/2007/11/11/opinion/11freedman.html?pagewanted=1&ei=5090&en=e0ca987ad4bd515f&ex=1352437200&partner=rssuserland&emc=rss)" by Marco Iacoboni and colleagues.  This steaming pile of shoddy reverse inferences inspired a group of us to write a letter to the editor, [published online](http://www.nytimes.com/2007/11/14/opinion/lweb14brain.html).  Well, the NYT editorial page is at it again, this time with a piece by self-proclaimed neuromarketer Martin Lindstrom, titled "[You love your iPhone, literall](http://www.nytimes.com/2011/10/01/opinion/you-love-your-iphone-literally.html?_r=1)y" (h/t Raj Raizada for pointing me to it).  The argument of the article is that rather than our feelings about iphones reflecting something like an addiction driven by dopamine (which I have [argued for in the past](http://www.huffingtonpost.com/russell-poldrack/multitasking-the-brain-se_b_334674.html)), our feelings about our digital devices instead reflect true love, based on fMRI:But most striking of all was the flurry of activation in the insular cortex of the brain, which is associated with feelings of love and compassion. The subjects’ brains responded to the sound of their phones as they would respond to the presence or proximity of a girlfriend, boyfriend or family member.In short, the subjects didn’t demonstrate the classic brain-based signs of addiction. Instead, they loved their iPhones.Insular cortex may well be associated with feelings of love and compassion, but this hardly proves that we are in love with our iPhones.  In Tal Yarkoni's [recent paper in Nature Methods](http://www.nature.com/nmeth/journal/v8/n8/full/nmeth.1635.html), we found that the anterior insula was one of the most highly activated part of the brain, showing activation in nearly 1/3 of all imaging studies!  Further, the well-known studies of love by Helen Fisher and colleagues don't even show activation in the insula related to love, but instead in classic reward system areas.  So far as I can tell, this particular reverse inference was simply fabricated from whole cloth.  I would have hoped that the NY Times would have learned its lesson from the last episode.
+
+---
+
+## 6 comments captured from [original post](https://russpoldrack.blogspot.com/2011/10/nyt-editorial-fmri-complete-crap.html) on Blogger
+
+**biobabbler said on 2011-10-02**
+
+Re: your post title: Tell us how you really feel.<br /><br />=) I really appreciate direct people.<br /><br />=) And am now following.<br /><br />Oh, and if I used my cell phone (or iPhone, if I had one), and programmed it to have a special ring when my husband called (really the only person I really ever want to talk to, as am NOT a phone person), you can bet my brain would then be sending hearts out (like Sally from Peanuts, when she is near Linus) 'cause I am in love with my husband. MOST DECIDEDLY not the phone. The phone is a means to an end.<br /><br />So, if I am writing a note to my husband, whom I love, am I also then, based on my brain activity or blood chemistry (if they actually accurately pinpointed indicators of love), in love with the paper and pen? I think not.
+
+**Catherine Kerr said on 2011-10-02**
+
+I agree with you about the lack of specificity in the insula... However, Aron  Fisher et al's J Neurophys (2005) study did report some interesting insula findings <br /><br />&quot;length of time in love is a major factor for neural activity in the insula and cingulate/retrosplenial cortex when looking at an image of a romantic partner.&quot;<br /><br />Of course that group's romantic rejection paper had I think a more robust insula finding....speaking to your larger point.
+
+**Ace said on 2011-10-02**
+
+I agree but your post has been sent around with the assertion that fmri is pseudoscience, with which I am pretty sure you'd disagree. I don't blog much but I had to comment on this: http://www.sayginlab.org/blog/?p=135<br /><br />Would love to hear your thoughts.
+
+**Russ Poldrack said on 2011-10-02**
+
+@Ace: thanks for sending the link to your post, which was right on.
+
+**Unknown said on 2011-10-05**
+
+I wouldn't trust anything coming from a guy who writes a book called, &quot;Brandwashed: Tricks Companies Use to Manipulate Our Minds and Persuade Us to Buy.&quot; He should have titled his article, &quot;How I manipulate the facts to support my baseless argument.&quot; Clearly he's deducing from his anti-Capitalist premise that companies are only out to manipulate you to make a profit. And he's using fMRI data to erroneously support his erroneous conclusion. He thinks that if equating &quot;love&quot; for one's iPhone with &quot;love&quot; for one's significant other that this will demonstrate that companies are trying to supplant your higher values such as one's relationship with a husband or wife, friends, and family, with inanimate objects (although important, still of lesser value than the people in one's life). <br /><br />He's engaging in this mind-body dichotomy by assuming that our material values are at war with our spiritual values. Our iPhones are eroding our personal relationships he claims. For rational people who know how to prioritize, an iPhone is not destroying our relationships. If anything it's enhancing them by providing more efficient means of facilitating contact with those who are important to us.
+
+**ZR said on 2011-10-06**
+
+On the subject of using abstract words to describe CONCRETE science:<br /><br />please stop. you are making science look inaccurate.<br /><br />&quot;love&quot; &quot;addiction&quot; all of those things are income-generating, politic-/law-making words... science is neutral.<br /><br />dopamine. that's it. that's all we are talking about here.<br /><br />dopamine.<br /><br />there isn't more than one dopamine.<br />just one. no reason to have like 50 words for it.
+

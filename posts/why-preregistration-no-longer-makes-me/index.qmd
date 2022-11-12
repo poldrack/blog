@@ -1,0 +1,38 @@
+---
+date: "2016/09/01"
+title: "Why preregistration no longer makes me nervous"
+author: "Russ Poldrack"
+---
+
+*This was originally posted on blogger [here](https://russpoldrack.blogspot.com/2016/09/why-preregistration-no-longer-makes-me.html)*.
+
+In a [recent presidential column in the APS Observer](http://www.psychologicalscience.org/index.php/publications/observer/2016/sept-16/why-preregistration-makes-me-nervous.html), [Susan Goldin-Meadow](http://psychology.uchicago.edu/people/faculty/sgmeadow.shtml) lays out her concerns about preregistration.  She has two main concerns:The first is the fear that preregistration will stifle discovery. Science isn’t just about testing hypotheses — it’s also about discovering hypotheses grounded in phenomena that are worthy of study. Aren’t we supposed to let the data guide us in our exploration? How can we make new discoveries if our studies need to be catalogued before they are run? The second concern is that preregistration seems like it applies only to certain types of studies — experimental studies done in the lab under controlled conditions. What about observational research, field research, and research with uncommon participants, to name just a few that might not fit neatly into the preregistration script?She makes the argument that there are two stages of scientific practice, and that pre-registration is only appropriate for one of them:The first stage is devoted to discovering phenomena, describing them appropriately (i.e., figuring out which aspects of the phenomenon define it and are essential to it), and exploring the robustness and generality of the phenomenon. Only after this step has been taken (and it is not a trivial one) should we move on to exploring causal factors — mechanisms that precede the phenomenon and are involved in bringing it about, and functions that follow the phenomenon and lead to its recurrence….Preregistration is appropriate for Stage 2 hypothesis-testing studies, but it is hard to reconcile with Stage 1 discovery studies.I must admit that I started out with exactly the same concerns about pre-registration.  I was worried that it would stifle discovery, and lead to turnkey science that would never tell us anything new. However, I no longer believe that.  It’s become clear to me that pre-registration is just as useful at the discovery phase as at the hypothesis-testing phase, because it helps keep us from fooling ourselves.  For discovery studies, we have adopted a strategy of pre-registering whatever details we can; in some cases this might just be the sample size, sampling strategy, and the main outcome of interest.  In these cases we will almost certainly do analyses beyond these, but having pre-registered these details gives us and others more faith in the results from the planned analyses; it also helps us more clearly distinguish between a priori and ad hoc analysis decisions (i.e., we can’t tell ourselves “we would have planned to do that analysis”); if it’s not pre-registered, then it’s treated through the lens of discovery, and thus not really believed until it’s replicated or otherwise validated.  In the future, in our publications we will be very clear about which results arose from pre-registered analyses and which were unplanned discovery analyses; I am hopeful that by helping more clearly distinguish between these two kinds of analyses, the move to pre-registration will make all of our science better.I would also argue that the phase of "exploring the robustness and generality of the phenomenon”, which Goldin-Meadow assigns to the unregistered discovery phase, is exactly the phase in which pre-registration is most important. Imagine how many hours of graduate student time and gallons of tears could have been saved if this strategy had been used in the initial studies of [ego depletion](http://www.slate.com/articles/health_and_science/cover_story/2016/03/ego_depletion_an_influential_theory_in_psychology_may_have_just_been_debunked.html) or [facial feedback](http://www.slate.com/articles/health_and_science/cover_story/2016/08/can_smiling_make_you_happier_maybe_maybe_not_we_have_no_idea.html).  In our lab, it is now standard to perform a pre-registered replication before we believe any new behavioral phenomenon; it’s been interesting to see how many of them fall by the wayside.  In some cases we simply can’t do a replication due to the size or nature of the study; in these cases, we register whatever we can up front, and we try to reserve a separate validation dataset for testing of whatever results come from our initial discovery set.  You can see an example of this in our [recent online study of self-regulation](https://osf.io/br2c9/).I’m glad that this discussion is going on in the open, because I think a lot of my colleagues in the field share concerns similar to those expressed by Goldin-Meadow.  I hope that the examples of many successful labs now using pre-registration will help convince them that it really is a road to better science.
+
+---
+
+## 6 comments captured from [original post](https://russpoldrack.blogspot.com/2016/09/why-preregistration-no-longer-makes-me.html) on Blogger
+
+**Unknown said on 2016-09-01**
+
+Well said. This expresses my thoughts on this pretty much exactly.
+
+**Anon_Postodoc said on 2016-09-01**
+
+So if I'm working from an extant dataset, what are my pre-registration options? It would seem the &quot;best&quot; pre-registration option is to do a Registered Report and have everything peer-reviewed prior to actually running the planned analyses. But many of the journals in the cognitive neuroscience field simply do not allow registered reports for extant databases. What am I to do if I'm working from a publicly available or other existing dataset, and I want to pre-register my analyses?
+
+**Russ Poldrack said on 2016-09-01**
+
+you can still pre-register your analyses that you plan to do on the public dataset.  you won't be able to do a registered report, but you will still have the ability to distinguish between planned and discovery analyses.  here is an example: https://osf.io/wsnjb/
+
+**Anon_Postodoc said on 2016-09-01**
+
+Thanks for the example! So then do you reference the registration document in the (eventual) final paper? Or is it just to have a time-stamped record somewhere on the internet for people to see? I understand the broader point, just not clear if putting something up on OSF or other forum is to have a public document out there somewhere to keep the research team honest, or if there's some additional benefits at peer review, etc. Sorry if this comes off as a bit dense, just trying to get a sense of the practical  mechanics/benefits of pre-registration for these situations.
+
+**Russ Poldrack said on 2016-09-01**
+
+We will certainly point to the registration when we write up the work. you are right that there is nothing that keeps someone from doing some analyses and then dishonestly &quot;pre&quot;-registering them, but I think we have to work on the assumption that our colleagues are fundamentally honest, otherwise all bets are off. It's also not clear to us yet whether there will be actual benefits (or costs, for that matter) in the review process - we have not yet submitted anything that was tied to a registration. So we are just as in the dark as you are!<br />
+
+**Dr_Rick said on 2016-09-02**
+
+Isn't pre registration, then, exactly what we teach our PhD candidates by having them write up a dissertation proposal before actually doing the dissertation research?
+

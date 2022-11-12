@@ -1,0 +1,18 @@
+---
+date: "2011/01/01"
+title: "Goals for the new year"
+author: "Russ Poldrack"
+---
+
+*This was originally posted on blogger [here](https://russpoldrack.blogspot.com/2011/01/goals-for-new-year.html)*.
+
+Although I've never been a big fan of new year's resolutions, I do like to set some goals at the beginning of the year so that I have measureable objectives to strive for.  My main goal for 2010 was to exercise at least 4 times a week.  That was difficult during the spring because I was traveling a ton, but since August I have done a pretty good job of exercising 5-6 times a week.  The main thing I have done to accomplish this is to make going to the gym a daily morning ritual.  It can be very hard to make myself go to the gym if I've not been doing it regularly, but once I'm in the habit then it doesn't really take much gumption to get myself there.A second goal, somewhat harder to quantify, was "say no more often."  I apologize to those of you who might have borne the brunt of this goal, but I think I have been rather successful.  I said no to a number of talk invitations, skipped two conferences (SFN and MDRS), and have refused an increasingly proportion of review requests.  Then again, there were a lot of things I did not say no to, reflected in the fact that I flew more than 100,000 miles in 2010 (hello Platinum Status!)For 2011 I am setting three new goals.  Work toward a travel moratorium for 2012.  I have traveled a lot in the past few years, and 2011 will be no different.  I love traveling and [have learned to deal with the stresses of air travel](http://www.russpoldrack.org/2010/11/becoming-academic-road-warrior.html).  However, the physical toll of heavy travel can be substantial, because it makes it very hard to keep up my exercise routine and also makes it hard to stick to a healthy eating plan.  I will never be able to go a year without any travel, due to my various professional responsibilities.  However, the majority of my travel is elective, in the sense that I could say no without greatly harming my career.  During 2011, my default answer for any invitations to travel during 2012 will be "no".  Improve climbing skills well enough to lead climb.  One big revelation for me in 2010 was the fun of rock climbing, which one of my friends has been kind enough to introduce me to over the last couple of months.  So far I have only done "top rope" climbing, where someone else (the "lead climber") first ascends the face and puts the rope in place from the top, and then I climb the same route.  By the end of the year I would like to be able to lead a route myself, which will require a combination of climbing skill and nerves (since one can fall much farther while lead climbing compared to top rope climbing).  No new web projects.  Over the last few years my students and I have started a number of web projects.  Some of these, such as [The Cognitive Atlas ](http://www.cognitiveatlas.org/)and [PubBrain](http://www.pubbrain.org/) are fairly well established and get a decent bit of traffic, while others such as [fmrimethods.org](http://fmrimethods.org/) have languished.  In 2010 I started [openfmri.org](http://openfmri.org/) which is a project to support sharing of raw brain imaging data; this project requires a good bit of work because the data have to be organized and validated.  For 2011 I am placing a moratorium on new web projects, so that I can focus on the projects that I already have in place.
+
+---
+
+## 1 comments captured from [original post](https://russpoldrack.blogspot.com/2011/01/goals-for-new-year.html) on Blogger
+
+**Andrew Eskind said on 2011-10-05**
+
+As a layperson, I appreciate the way you have debunked the pretentious NYT piece.
+
