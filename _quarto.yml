@@ -1,0 +1,19 @@
+project:
+  type: website
+
+website:
+  title: "Russ Poldrack's blog"
+  navbar:
+    right:
+      - about.qmd
+      - icon: github
+        href: https://github.com/poldrack
+      - icon: mastodon
+        href: https://mastodon.online/@Russpoldrack
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+
+
+
