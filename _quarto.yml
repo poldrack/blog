@@ -1,11 +1,13 @@
 project:
   type: website
+  output-dir: ../docs
 
 website:
   title: "Russ Poldrack's blog"
   navbar:
     right:
-      - about.qmd
+      - text: "About"
+        href: https://profiles.stanford.edu/russell-poldrack
       - icon: github
         href: https://github.com/poldrack
       - icon: mastodon
