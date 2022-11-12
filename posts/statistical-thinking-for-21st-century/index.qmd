@@ -1,7 +1,7 @@
 ---
-date: "2018/11/20"
-title: "Statistical Thinking for the 21st Century - a new intro statistics book"
 author: "Russ Poldrack"
+date: 2018/11/20
+title: Statistical Thinking for the 21st Century - a new intro statistics book
 ---
 
 *This was originally posted on blogger [here](https://russpoldrack.blogspot.com/2018/11/statistical-thinking-for-21st-century.html)*.

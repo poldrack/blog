@@ -1,7 +1,7 @@
 ---
-date: "2012/02/09"
-title: "Quitting cable"
 author: "Russ Poldrack"
+date: 2012/02/09
+title: Quitting cable
 ---
 
 *This was originally posted on blogger [here](https://russpoldrack.blogspot.com/2012/02/quitting-cable.html)*.

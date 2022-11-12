@@ -1,7 +1,7 @@
 ---
-date: "2019/06/27"
-title: "Why I will be flying less"
 author: "Russ Poldrack"
+date: 2019/06/27
+title: Why I will be flying less
 ---
 
 *This was originally posted on blogger [here](https://russpoldrack.blogspot.com/2019/06/why-i-will-be-flying-less.html)*.

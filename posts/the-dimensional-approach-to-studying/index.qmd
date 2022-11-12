@@ -1,7 +1,7 @@
 ---
-date: "2013/05/03"
-title: "The dimensional approach to studying mental illness"
 author: "Russ Poldrack"
+date: 2013/05/03
+title: The dimensional approach to studying mental illness
 ---
 
 *This was originally posted on blogger [here](https://russpoldrack.blogspot.com/2013/05/the-dimensional-approach-to-studying.html)*.

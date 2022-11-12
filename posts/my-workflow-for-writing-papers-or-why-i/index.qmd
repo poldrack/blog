@@ -1,7 +1,7 @@
 ---
-date: "2010/10/15"
-title: "My workflow for writing papers (or, why I switched to LaTeX)"
 author: "Russ Poldrack"
+date: 2010/10/15
+title: My workflow for writing papers (or, why I switched to LaTeX)
 ---
 
 *This was originally posted on blogger [here](https://russpoldrack.blogspot.com/2010/10/my-workflow-for-writing-papers-or-why-i.html)*.

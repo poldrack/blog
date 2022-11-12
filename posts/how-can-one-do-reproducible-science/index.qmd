@@ -1,7 +1,7 @@
 ---
-date: "2018/04/17"
-title: "How can one do reproducible science with limited resources?"
 author: "Russ Poldrack"
+date: 2018/04/17
+title: How can one do reproducible science with limited resources?
 ---
 
 *This was originally posted on blogger [here](https://russpoldrack.blogspot.com/2018/04/how-can-one-do-reproducible-science.html)*.

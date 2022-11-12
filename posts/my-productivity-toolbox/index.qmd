@@ -1,7 +1,7 @@
 ---
-date: "2010/11/10"
-title: "My Productivity Toolbox"
 author: "Russ Poldrack"
+date: 2010/11/10
+title: My Productivity Toolbox
 ---
 
 *This was originally posted on blogger [here](https://russpoldrack.blogspot.com/2010/11/my-productivity-toolbox.html)*.

@@ -1,7 +1,7 @@
 ---
-date: "2013/04/06"
-title: "How well can we predict future criminal acts from fMRI data?"
 author: "Russ Poldrack"
+date: 2013/04/06
+title: How well can we predict future criminal acts from fMRI data?
 ---
 
 *This was originally posted on blogger [here](https://russpoldrack.blogspot.com/2013/04/how-well-can-we-predict-future-criminal.html)*.

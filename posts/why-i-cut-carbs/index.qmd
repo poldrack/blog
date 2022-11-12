@@ -1,7 +1,7 @@
 ---
-date: "2011/04/10"
-title: "why I cut the carbs"
 author: "Russ Poldrack"
+date: 2011/04/10
+title: why I cut the carbs
 ---
 
 *This was originally posted on blogger [here](https://russpoldrack.blogspot.com/2011/04/why-i-cut-carbs.html)*.

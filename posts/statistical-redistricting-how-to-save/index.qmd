@@ -1,7 +1,7 @@
 ---
-date: "2010/10/19"
-title: "statistical redistricting: how to save lots of time and money and get just about the same result"
 author: "Russ Poldrack"
+date: 2010/10/19
+title: statistical redistricting- how to save lots of time and money and get just about the same result
 ---
 
 *This was originally posted on blogger [here](https://russpoldrack.blogspot.com/2010/10/statistical-redistricting-how-to-save.html)*.

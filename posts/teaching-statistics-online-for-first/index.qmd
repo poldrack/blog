@@ -1,7 +1,7 @@
 ---
-date: "2021/04/03"
-title: "Teaching statistics online (for the first time): Lessons learned"
 author: "Russ Poldrack"
+date: 2021/04/03
+title: Teaching statistics online (for the first time)- Lessons learned
 ---
 
 *This was originally posted on blogger [here](https://russpoldrack.blogspot.com/2021/04/teaching-statistics-online-for-first.html)*.

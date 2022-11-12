@@ -1,7 +1,7 @@
 ---
-date: "2010/10/14"
-title: "Template: russpoldrack.org"
 author: "Russ Poldrack"
+date: 2010/10/14
+title: Template- russpoldrack.org
 ---
 
 *This was originally posted on blogger [here](http://russpoldrack.blogspot.com/)*.

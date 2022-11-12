@@ -1,7 +1,7 @@
 ---
-date: "2012/05/15"
-title: "Obesity, health, and Gary Taubes"
 author: "Russ Poldrack"
+date: 2012/05/15
+title: Obesity, health, and Gary Taubes
 ---
 
 *This was originally posted on blogger [here](https://russpoldrack.blogspot.com/2012/05/obesity-health-and-gary-taubes.html)*.

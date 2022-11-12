@@ -1,7 +1,7 @@
 ---
-date: "2011/01/01"
-title: "Goals for the new year"
 author: "Russ Poldrack"
+date: 2011/01/01
+title: Goals for the new year
 ---
 
 *This was originally posted on blogger [here](https://russpoldrack.blogspot.com/2011/01/goals-for-new-year.html)*.

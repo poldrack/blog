@@ -1,7 +1,7 @@
 ---
-date: "2014/03/16"
-title: "532 days of self-examination"
 author: "Russ Poldrack"
+date: 2014/03/16
+title: 532 days of self-examination
 ---
 
 *This was originally posted on blogger [here](https://russpoldrack.blogspot.com/2014/03/532-days-of-self-examination.html)*.

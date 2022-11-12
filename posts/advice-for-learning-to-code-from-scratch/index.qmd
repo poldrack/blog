@@ -1,7 +1,7 @@
 ---
-date: "2016/05/20"
-title: "Advice for learning to code from scratch"
 author: "Russ Poldrack"
+date: 2016/05/20
+title: Advice for learning to code from scratch
 ---
 
 *This was originally posted on blogger [here](https://russpoldrack.blogspot.com/2016/05/advice-for-learning-to-code-from-scratch.html)*.

@@ -1,7 +1,7 @@
 ---
-date: "2016/09/01"
-title: "Why preregistration no longer makes me nervous"
 author: "Russ Poldrack"
+date: 2016/09/01
+title: Why preregistration no longer makes me nervous
 ---
 
 *This was originally posted on blogger [here](https://russpoldrack.blogspot.com/2016/09/why-preregistration-no-longer-makes-me.html)*.

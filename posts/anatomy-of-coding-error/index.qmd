@@ -1,7 +1,7 @@
 ---
-date: "2013/02/20"
-title: "Anatomy of a coding error"
 author: "Russ Poldrack"
+date: 2013/02/20
+title: Anatomy of a coding error
 ---
 
 *This was originally posted on blogger [here](https://russpoldrack.blogspot.com/2013/02/anatomy-of-coding-error.html)*.

@@ -1,7 +1,7 @@
 ---
-date: "2013/01/16"
-title: "Is reverse inference a fallacy?  A comment on Hutzler"
 author: "Russ Poldrack"
+date: 2013/01/16
+title: Is reverse inference a fallacy?  A comment on Hutzler
 ---
 
 *This was originally posted on blogger [here](https://russpoldrack.blogspot.com/2013/01/is-reverse-inference-fallacy-comment-on.html)*.

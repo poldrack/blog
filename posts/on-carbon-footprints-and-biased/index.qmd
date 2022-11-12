@@ -1,7 +1,7 @@
 ---
-date: "2010/12/15"
-title: "on carbon footprints and biased judgments"
 author: "Russ Poldrack"
+date: 2010/12/15
+title: on carbon footprints and biased judgments
 ---
 
 *This was originally posted on blogger [here](https://russpoldrack.blogspot.com/2010/12/on-carbon-footprints-and-biased.html)*.

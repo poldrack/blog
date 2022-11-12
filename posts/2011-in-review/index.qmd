@@ -1,7 +1,7 @@
 ---
-date: "2011/12/31"
-title: "2011 in review"
 author: "Russ Poldrack"
+date: 2011/12/31
+title: 2011 in review
 ---
 
 *This was originally posted on blogger [here](https://russpoldrack.blogspot.com/2011/12/2011-in-review.html)*.

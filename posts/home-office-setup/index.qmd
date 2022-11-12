@@ -1,7 +1,7 @@
 ---
-date: "2020/10/13"
-title: "Home office setup"
 author: "Russ Poldrack"
+date: 2020/10/13
+title: Home office setup
 ---
 
 *This was originally posted on blogger [here](https://russpoldrack.blogspot.com/2020/10/home-office-setup.html)*.

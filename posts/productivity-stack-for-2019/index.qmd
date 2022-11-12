@@ -1,7 +1,7 @@
 ---
-date: "2018/12/03"
-title: "Productivity stack for 2019"
 author: "Russ Poldrack"
+date: 2018/12/03
+title: Productivity stack for 2019
 ---
 
 *This was originally posted on blogger [here](https://russpoldrack.blogspot.com/2018/12/productivity-stack-for-2019.html)*.

@@ -1,7 +1,7 @@
 ---
-date: "2016/12/02"
-title: "The NIH should stop penalizing collaborative research"
 author: "Russ Poldrack"
+date: 2016/12/02
+title: The NIH should stop penalizing collaborative research
 ---
 
 *This was originally posted on blogger [here](https://russpoldrack.blogspot.com/2016/12/the-nih-should-stop-penalizing.html)*.

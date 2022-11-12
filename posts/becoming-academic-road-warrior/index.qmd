@@ -1,7 +1,7 @@
 ---
-date: "2010/11/13"
-title: "Becoming an academic road warrior"
 author: "Russ Poldrack"
+date: 2010/11/13
+title: Becoming an academic road warrior
 ---
 
 *This was originally posted on blogger [here](https://russpoldrack.blogspot.com/2010/11/becoming-academic-road-warrior.html)*.

@@ -1,7 +1,7 @@
 ---
-date: "2020/11/29"
-title: "Editing lecture videos using Davinci Resolve"
 author: "Russ Poldrack"
+date: 2020/11/29
+title: Editing lecture videos using Davinci Resolve
 ---
 
 *This was originally posted on blogger [here](https://russpoldrack.blogspot.com/2020/11/editing-lecture-videos-using-davinci.html)*.

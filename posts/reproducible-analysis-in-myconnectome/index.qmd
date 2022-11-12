@@ -1,7 +1,7 @@
 ---
-date: "2015/12/09"
-title: "Reproducible analysis in the MyConnectome project"
 author: "Russ Poldrack"
+date: 2015/12/09
+title: Reproducible analysis in the MyConnectome project
 ---
 
 *This was originally posted on blogger [here](https://russpoldrack.blogspot.com/2015/12/reproducible-analysis-in-myconnectome.html)*.

@@ -1,7 +1,7 @@
 ---
-date: "2011/10/04"
-title: "NYT Letter to the Editor: The uncut version"
 author: "Russ Poldrack"
+date: 2011/10/04
+title: NYT Letter to the Editor- The uncut version
 ---
 
 *This was originally posted on blogger [here](https://russpoldrack.blogspot.com/2011/10/nyt-letter-to-editor-uncut-version.html)*.

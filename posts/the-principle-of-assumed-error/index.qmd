@@ -1,7 +1,7 @@
 ---
-date: "2016/08/21"
-title: "The principle of assumed error"
 author: "Russ Poldrack"
+date: 2016/08/21
+title: The principle of assumed error
 ---
 
 *This was originally posted on blogger [here](https://russpoldrack.blogspot.com/2016/08/the-principle-of-assumed-error.html)*.

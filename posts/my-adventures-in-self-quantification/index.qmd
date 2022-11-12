@@ -1,7 +1,7 @@
 ---
-date: "2013/03/13"
-title: "My adventures in self-quantification"
 author: "Russ Poldrack"
+date: 2013/03/13
+title: My adventures in self-quantification
 ---
 
 *This was originally posted on blogger [here](https://russpoldrack.blogspot.com/2013/03/my-adventures-in-self-quantification.html)*.

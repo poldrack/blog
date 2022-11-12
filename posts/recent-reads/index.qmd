@@ -1,7 +1,7 @@
 ---
-date: "2011/06/30"
-title: "Recent Reads"
 author: "Russ Poldrack"
+date: 2011/06/30
+title: Recent Reads
 ---
 
 *This was originally posted on blogger [here](https://russpoldrack.blogspot.com/2011/06/recent-reads.html)*.

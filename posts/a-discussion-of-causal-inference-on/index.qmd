@@ -1,7 +1,7 @@
 ---
-date: "2013/12/19"
-title: "A discussion of causal inference on fMRI data"
 author: "Russ Poldrack"
+date: 2013/12/19
+title: A discussion of causal inference on fMRI data
 ---
 
 *This was originally posted on blogger [here](https://russpoldrack.blogspot.com/2013/12/a-discussion-of-causal-inference-on.html)*.

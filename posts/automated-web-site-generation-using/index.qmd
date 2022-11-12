@@ -1,7 +1,7 @@
 ---
-date: "2018/11/27"
-title: "Automated web site generation using Bookdown, CircleCI, and Github"
 author: "Russ Poldrack"
+date: 2018/11/27
+title: Automated web site generation using Bookdown, CircleCI, and Github
 ---
 
 *This was originally posted on blogger [here](https://russpoldrack.blogspot.com/2018/11/automated-web-site-generation-using.html)*.

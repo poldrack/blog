@@ -1,7 +1,7 @@
 ---
-date: "2020/01/24"
-title: "Talking remotely: Lessons learned so far"
 author: "Russ Poldrack"
+date: 2020/01/24
+title: Talking remotely- Lessons learned so far
 ---
 
 *This was originally posted on blogger [here](https://russpoldrack.blogspot.com/2020/01/talking-remotely-lessons-learned-so-far.html)*.

@@ -1,7 +1,7 @@
 ---
-date: "2020/07/23"
-title: "Vacation fun: Making traditional Texas chili con carne"
 author: "Russ Poldrack"
+date: 2020/07/23
+title: Vacation fun- Making traditional Texas chili con carne
 ---
 
 *This was originally posted on blogger [here](https://russpoldrack.blogspot.com/2020/07/vacation-fun-making-traditional-texas.html)*.

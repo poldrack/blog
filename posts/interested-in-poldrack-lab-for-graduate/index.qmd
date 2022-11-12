@@ -1,7 +1,7 @@
 ---
-date: "2016/08/24"
-title: "Interested in the Poldrack Lab for graduate school?"
 author: "Russ Poldrack"
+date: 2016/08/24
+title: Interested in the Poldrack Lab for graduate school?
 ---
 
 *This was originally posted on blogger [here](https://russpoldrack.blogspot.com/2016/08/interested-in-poldrack-lab-for-graduate.html)*.

@@ -1,7 +1,7 @@
 ---
-date: "2010/11/21"
-title: "My personal computing history"
 author: "Russ Poldrack"
+date: 2010/11/21
+title: My personal computing history
 ---
 
 *This was originally posted on blogger [here](https://russpoldrack.blogspot.com/2010/11/my-personal-computing-history.html)*.

@@ -1,7 +1,7 @@
 ---
-date: "2016/02/26"
-title: "Reproducibility and quantitative training in psychology"
 author: "Russ Poldrack"
+date: 2016/02/26
+title: Reproducibility and quantitative training in psychology
 ---
 
 *This was originally posted on blogger [here](https://russpoldrack.blogspot.com/2016/02/reproducibility-and-quantitative.html)*.

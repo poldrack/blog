@@ -1,7 +1,7 @@
 ---
-date: "2016/04/18"
-title: "How folksy is psychology?  The linguistic history of cognitive ontologies"
 author: "Russ Poldrack"
+date: 2016/04/18
+title: How folksy is psychology?  The linguistic history of cognitive ontologies
 ---
 
 *This was originally posted on blogger [here](https://russpoldrack.blogspot.com/2016/04/how-folksy-is-psychology-linguistic.html)*.

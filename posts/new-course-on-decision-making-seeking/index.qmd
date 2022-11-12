@@ -1,7 +1,7 @@
 ---
-date: "2015/08/26"
-title: "New course on decision making: Seeking feedback"
 author: "Russ Poldrack"
+date: 2015/08/26
+title: New course on decision making- Seeking feedback
 ---
 
 *This was originally posted on blogger [here](https://russpoldrack.blogspot.com/2015/08/new-course-on-decision-making-seeking.html)*.

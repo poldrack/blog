@@ -1,7 +1,7 @@
 ---
-date: "2018/01/22"
-title: "Defaults in R can make debugging incredibly hard for beginners"
 author: "Russ Poldrack"
+date: 2018/01/22
+title: Defaults in R can make debugging incredibly hard for beginners
 ---
 
 *This was originally posted on blogger [here](https://russpoldrack.blogspot.com/2018/01/defaults-in-r-can-make-debugging.html)*.

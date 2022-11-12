@@ -1,7 +1,7 @@
 ---
-date: "2019/12/12"
-title: "Computing models for a neuroimaging lab"
 author: "Russ Poldrack"
+date: 2019/12/12
+title: Computing models for a neuroimaging lab
 ---
 
 *This was originally posted on blogger [here](https://russpoldrack.blogspot.com/2019/12/computing-models-for-neuroimaging-lab.html)*.

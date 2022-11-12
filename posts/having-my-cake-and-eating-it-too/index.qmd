@@ -1,7 +1,7 @@
 ---
-date: "2016/07/22"
-title: "Having my cake and eating it too?"
 author: "Russ Poldrack"
+date: 2016/07/22
+title: Having my cake and eating it too?
 ---
 
 *This was originally posted on blogger [here](https://russpoldrack.blogspot.com/2016/07/having-my-cake-and-eating-it-too.html)*.

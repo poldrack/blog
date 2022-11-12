@@ -1,7 +1,7 @@
 ---
-date: "2015/11/01"
-title: "Are good science and great storytelling compatible?"
 author: "Russ Poldrack"
+date: 2015/11/01
+title: Are good science and great storytelling compatible?
 ---
 
 *This was originally posted on blogger [here](https://russpoldrack.blogspot.com/2015/11/are-good-science-and-great-storytelling.html)*.

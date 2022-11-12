@@ -1,7 +1,7 @@
 ---
-date: "2018/03/25"
-title: "To Code or Not to Code (in intro statistics)?"
 author: "Russ Poldrack"
+date: 2018/03/25
+title: To Code or Not to Code (in intro statistics)?
 ---
 
 *This was originally posted on blogger [here](https://russpoldrack.blogspot.com/2018/03/to-code-or-not-to-code-in-intro.html)*.

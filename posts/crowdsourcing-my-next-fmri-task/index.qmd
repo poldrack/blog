@@ -1,7 +1,7 @@
 ---
-date: "2013/05/04"
-title: "Crowdsourcing my next fMRI task"
 author: "Russ Poldrack"
+date: 2013/05/04
+title: Crowdsourcing my next fMRI task
 ---
 
 *This was originally posted on blogger [here](https://russpoldrack.blogspot.com/2013/05/crowdsourcing-my-next-fmri-task.html)*.
