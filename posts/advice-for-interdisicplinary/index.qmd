@@ -1,0 +1,39 @@
+---
+author: "Russ Poldrack"
+date: 2022/11/03
+title: Advice for getting a job as an interdisciplinary researcher
+---
+
+## Advice for getting a job as a interdisciplinary researcher
+
+I gave a talk yesterday to the [Stanford NeuroTech grad student group](https://neuroscience.stanford.edu/mbct/training-programs/neuro-tech-training-program) about the challenges of getting an academic job as an interdisciplinary researcher.  Here are a few takeaways - as always, these are specific to my experience and may or may not be relevant for others, so take it for what it's worth!
+
+1.  The struggle is real.  There is apparently a large body of work that has examined the penalty for interdisciplinarity in hiring.  There are various explanations for this - e.g.: "Extant theory suggests that candidates with an unfocused identity—those spanning different categories—suffer from a valuation penalty because evaluators are confused by their profile and concerned they lack the required skills. We argue that unfocused candidates may be penalized for another reason; they threaten established social boundaries."  https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4102384
+
+2. I have seen it in my own group. One former member of the group was unable to find an academic job despite a very strong CV and major prominence in our field.  The main problem seems to be that many academic departments are like guilds, and want to hire someone who is "one of us" (aka "a real \<insert field here\>")
+
+![one of us GIF](https://media.giphy.com/media/Ae7SI3LoPYj8Q/giphy.gif)
+
+1. I consider myself quite interdisciplinary at this point, but I got there the safe way: Starting as someone with bona fides in a particular field (cognitive neuroscience, which itself is interdisciplinary but was already established as a field, so I could be "one of them"), and then branching out later in my career. But for many people doing truly novel interdisciplinary work, this isn't a viable alternative.
+
+What is an interdisciplinary scientist to do?  Here are a few tips that come to mind:
+
+1. You need laser focus on your specific topic/question.
+Don’t let people confuse “interdisciplinary” with “unfocused”.
+
+2. Find your people.  Seek out and become deeply involved in a specific intellectual community that is most relevant to your work.  Get to know others around the world in your specific area.  
+
+3. You will have to do double duty.  You need to be able to talk to disciplinary specialists in each of your overlapping areas - e.g. a cognitive neuroscientist needs to be able to speak effectively to other kinds of neuroscientists and other kinds of psychologists.  Go to disciplinary talks/conferences for each of your component disciplines so you can learn to speak their languages
+
+If you are lucky enough to get a job interview:
+
+1. Speak to the broadest reaches of the department and convince them that your problem is important.
+Your job talk needs to convey that you can speak their language, especially to the people who are somewhat outside your specific part of the discipline.  Eg, if you are neuro/engineering person you need to be able to speak to basic neuroscientists and to engineers who work on very different problems from yours.
+
+2. Be ready to show how you would fit in the department.
+
+- What courses could you teach?
+- Who might you develop new collaborations with?
+- What essential training opportunities could you offer their students that don’t already exist?
+
+Many of these tips are true in general, but especially important for candidates at the intersection of different disciplines.  These are exactly the people we need to drive science in new and interesting directions, so I hope that we can find better ways in the future to bring them into our academic fold.
