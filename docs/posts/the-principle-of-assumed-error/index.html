@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.267">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Russ Poldrack">
+<meta name="dcterms.date" content="2016-08-21">
+
+<title>Russ Poldrack’s blog - The principle of assumed error</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Russ Poldrack’s blog</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="https://profiles.stanford.edu/russell-poldrack">
+ <span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/poldrack"><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://mastodon.online/@Russpoldrack"><i class="bi bi-mastodon" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">The principle of assumed error</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Russ Poldrack </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">August 21, 2016</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<p><em>This was originally posted on blogger <a href="https://russpoldrack.blogspot.com/2016/08/the-principle-of-assumed-error.html">here</a></em>.</p>
+<p>I’m going to be talking at the <a href="https://neurohackweek.github.io/">Neurohackweek meeting</a> in a few weeks, giving an overview of issues around reproducibility in neuroimaging research. In putting together my talk, I have been thinking about what general principles I want to convey, and I keep coming back to the quote from Richard Feynman in his 1974 Caltech commencement address: “The first principle is that you must not fool yourself and you are the easiest person to fool.” In thinking about how can we keep from fooling ourselves, I have settled on a general principle, which I am calling the “principle of assumed error” (I doubt this is an original idea, and I would be interested to hear about relevant prior expressions of it). The principle is that whenever one finds something using a computational analysis that fits with one’s predictions or seems like a “cool” finding, they should assume that it’s due to an error in the code rather than reflecting reality. Having made this assumption, one should then do everything they can to find out what kind of error could have resulted in the effect. This is really no different from the strategy that experimental scientists use (in theory), in which upon finding an effect they test every conceivable confound in order to rule them out as a cause of the effect. However, I find that this kind of thinking is much less common in computational analyses. Instead, when something “works” (i.e.&nbsp;gives us an answer we like) we run with it, whereas when the code doesn’t give us a good answer then we dig around for different ways to do the analysis that give a more satisfying answer. Because we will be more likely to accept errors that fit our hypotheses than those that do not due to confirmation bias, this procedure is guaranteed to increase the overall error rate of our research. If this sounds a lot like p-hacking, that’s because it is; as Gelman &amp; Loken pointed out in their <a href="http://www.stat.columbia.edu/~gelman/research/unpublished/p_hacking.pdf">Garden of Forking Paths paper,</a> one doesn’t have to be on an explicit fishing expedition in order to engage in practices that inflate error due to data-dependent analysis choices and confirmation bias. Ultimately I think that the best solution to this problem is to always reserve a validation dataset to confirm the results of any discovery analyses, but before one burns their only chance at such a validation, it’s important to make sure that the analysis has been thoroughly vetted.Having made the assumption that there is an error, how does one go about finding it? I think that standard software testing approaches offer a bit of help here, but in general it’s going to be very difficult to find complex algorithmic errors using basic unit tests. Instead, there are a couple of strategies that I have found useful for diagnosing errors.Parameter recoveryIf your model involves estimating parameters from data, it can be very useful to generate data with known values of those parameters and test whether the estimates match the known values. For example, I recently wrote a <a href="https://github.com/poldrack/ezdiff">python implementation of the EZ-diffusion model</a>, which is a simple model for estimating diffusion model parameters from behavioral data. In order to make sure that the model is correctly estimating these parameters, I generated simulated data using parameters randomly sampled from a reasonable range (using the rdiffusion function from the rtdists R package), and then estimated the correlation between the parameters used to generate the data and the model estimates. I set an aribtrary threshold of 0.9 for the correlation between the estimated and actual parameters; since there will be some noise in the data, we can’t expect them to match exactly, but this seems close enough to consider successful. I set up a test using <a href="http://docs.pytest.org/en/latest/">pytest</a>, and then added <a href="https://circleci.com/">CircleCI</a> automated testing for my Github repo (which automatically runs the software tests any time a new commit is pushed to the repo)<a href="https://www.blogger.com/blogger.g?blogID=8374109812192174281#1">1</a>. This shows how we can take advantage of software testing tools to do parameter recovery tests to make sure that our code is operating properly. I would argue that whenever one implements a new model fitting routine, this is the first thing that should be done. Imposing the null hypothesisAnother approach is to generate data for which the null hypothesis is true, and make sure that the results come out as expected under the null. This is a good way to protect one from cases where the error results in an overly optimistic result (e.g.&nbsp;as I discussed <a href="http://www.russpoldrack.org/2013/02/anatomy-of-coding-error.html">here previously</a>). One place I have found this particularly useful is in checking to make sure that there is no data peeking when doing classification analysis. In this example (Github repo <a href="https://github.com/poldrack/classifier_test">here</a>), I show how one can use random shuffling of labels to test whether a classification procedure is illegally peeking at test data during classifier training. In the following function, there is an error in which the classifier is trained on all of the data, rather than just the training data in each fold:def cheating_classifier(X,y): skf=StratifiedKFold(y,n_folds=4) pred=numpy.zeros(len(y)) knn=KNeighborsClassifier() for train,test in skf: knn.fit(X,y) # this is training on the entire dataset! pred[test]=knn.predict(X[test,:]) return numpy.mean(pred==y)Fit to a dataset with a true relation between the features and the outcome variable, this classifier predicts the outcome with about 80% accuracy. In comparison, the correct procedure (separating training and test data):def crossvalidated_classifier(X,y): skf=StratifiedKFold(y,n_folds=4) pred=numpy.zeros(len(y)) knn=KNeighborsClassifier() for train,test in skf: knn.fit(X[train,:],y[train]) pred[test]=knn.predict(X[test,:]) return numpy.mean(pred==y)predicts the outcome with about 68% accuracy. How would we know that the former is incorrect? What we can do is to perform the classification repeatedly, each time shuffling the labels. This is basically making the null hypothesis true, and thus accuracy should be at chance (which in this case is 50% because there are two outcomes with equal frequency). We can assess this using the following:def shuffle_test(X,y,clf,nperms=10000): acc=[] y_shuf=y.copy() for i in range(nperms): numpy.random.shuffle(y_shuf) acc.append(clf(X,y_shuf)) return accThis shuffles the data 10,000 times and assesses classifier accuracy. When we do this with the crossvalidated classifier, we see that accuracy is now about 51% - close enough to chance that we can feel comfortable that our procedure is not biased. However, when we submit the cheating classifier to this procedure, we see mean accuracy of about 69%; thus, our classifier will exhibit substantial classification accuracy even when there is no true relation between the labels and the features, due to overfitting of noise in the test data.Randomization is not perfect; in particular, one needs to make sure that the samples are exchangeable under the null hypothesis. This will generally be true when the samples were acquired through random sampling, but can fail when there is structure in the data (e.g.&nbsp;when the samples are individual subjects, but some sets of subjects are related). However, it’s often a very useful strategy when this assumption holds.I’d love to hear other ideas about how to implement the principle of assumed error for computational analyses. Please leave your comments below<img src=".png" class="img-fluid" alt="1">This should have been simple, but I hit some snags that point to just how difficult it can be to build truly reproducible analysis workflows. Running the code on my Mac, I found that my tests passed (i.e.&nbsp;the correlation between the estimated parameters using EZ-diffusion and the actual parameters used to generate the data was &gt; 0.9), confirming that my implementation seemed to be accurate. However, when I ran it on CircleCI (which implements the code within a Ubuntu Linux virtual machine), the tests failed, showing much lower correlations between estimated and actual values. Many things differed between the two systems, but my hunch was that it was due to the R code that was used to generate the simulated data (since the EZ diffusion model code is quite simple). I found that when I updated my Mac to the latest version of the rtdists package used to generate the data, I reproduced the poor results that I had seen on the CircleCI test. (I turns out that the parameterization of the function that was using had changed, leading to bad results with the previous function call.). My interim solution was to simply install the older version of the package as part of my CircleCI setup; having done this, the CircleCI tests now pass as well. <a href="https://www.blogger.com/blogger.g?blogID=8374109812192174281#top1">↩︎</a></p>
+<hr>
+<section id="comments-captured-from-original-post-on-blogger" class="level2">
+<h2 class="anchored" data-anchor-id="comments-captured-from-original-post-on-blogger">3 comments captured from <a href="https://russpoldrack.blogspot.com/2016/08/the-principle-of-assumed-error.html">original post</a> on Blogger</h2>
+<p><strong>Johan Carlin said on 2016-08-22</strong></p>
+<p>It’s good to check all results, good or bad. I actually have the opposite bias - I tend to assume that negative results are correct. So I try hard to check this tendency by going through and checking results even when they’re disappointing and you just want to look at something more encouraging instead. <br><br>On avoiding bugs in the first place, the biggest issue I see is not enough code reuse. A lot of scientists start from scratch with writing analysis code for each project (or worse yet, copy scripts around and try to edit them until they run on the new data). Such code tends to see very little use, with a small range of inputs, which makes it hard to spot inaccurate outputs. Try to cultivate your own analysis packages for running the sort of stuff your research usually involves. Even if it’s just for your own personal use, get in the habit of using version control and it will be far easier to figure out the scope of any bugs (if you know which commit introduced a bug it becomes fairly straight forward to work out which results are likely to have been affected and need to be recomputed).</p>
+<p><strong>Robert said on 2016-08-23</strong></p>
+<p>This article resonantes a bit with your thoughts. <br><br>http://scitation.aip.org/content/aip/magazine/physicstoday/article/65/7/10.1063/PT.3.1642<br><br>In my physics days we would always test analysis pipelines with simulated (incorporating as much of our physics knowledge as possible) data to ensure what comes out is what goes in and even then you can get into a trap of esoteric coding errors that might even be non-linear, so testing as much as possible is crucial and having independent tests of the pipelines was always crucial as well. With discovery directed particle physics experiments we would make sure to have a means to recover known physics parameters (such as cross-sections of processes we know that our experiment is sensitive to but not our main interest – an imbedded control if you will). <br><br>I definitely add my +1 to strict and principled approaches. The other thing, which is hard for people to sometimes accept is maybe their experiment just isn’t sensitive to the process they are investigating of hypothesizing exists. In physics this results in placing an upper limit on an effect size, which, IMHO would be a good lesson for neuroimaging experimentalists. <br></p>
+<p><strong>Russ Poldrack said on 2016-08-23</strong></p>
+<p>many thanks!</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

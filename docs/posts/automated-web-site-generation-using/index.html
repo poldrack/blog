@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Russ Poldrack">
-<meta name="dcterms.date" content="2010-10-14">
+<meta name="dcterms.date" content="2018-11-27">
 
-<title>Russ Poldrack’s blog - Welcome</title>
+<title>Russ Poldrack’s blog - Automated web site generation using Bookdown, CircleCI, and Github</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -105,7 +105,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Welcome</h1>
+      <h1 class="title">Automated web site generation using Bookdown, CircleCI, and Github</h1>
                       </div>
   </div>
     
@@ -122,7 +122,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">October 14, 2010</p>
+        <p class="date">November 27, 2018</p>
       </div>
     </div>
     
@@ -140,8 +140,8 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<p><em>This was originally posted on blogger <a href="https://russpoldrack.blogspot.com/2010/10/welcome.html">here</a></em>.</p>
-<p>I’ve set up this personal site so I will have a place to spout off about the various things that I think about that don’t fall under the purview of the my <a href="http://www.huffingtonpost.com/russell-poldrack">Huffington Post blog</a> (which is focused on implications of research for daily living) or the <a href="http://blog.cognitiveatlas.org/">Cognitive Atlas blog</a> (which is focused on topics related to our <a href="http://www.cognitiveatlas.org/">Cognitive Atlas project</a>). I will probably focus mostly on science issues, productivity tools and workflows, and food and travel.</p>
+<p><em>This was originally posted on blogger <a href="https://russpoldrack.blogspot.com/2018/11/automated-web-site-generation-using.html">here</a></em>.</p>
+<p>For my new open statistics book (<a href="http://statsthinking21.org/">Statistical Thinking for the 21st Century</a>), I used <a href="https://bookdown.org/yihui/bookdown/">Bookdown</a> which is a great tool for writing a book using RMarkdown. However, as the book came together, the time to build the book grew to more than 10 mins due to the many simulations and Bayesian model estimation. And since each output type (of which there are currently three: Gitbook, PDF, and EPUB) requires a separate build run, rebuilding the full book distribution became quite an undertaking. For this reason, I decided to implement an automated solution using the <a href="https://circleci.com/">CircleCI</a>continuous integration service. We already use this service for many of the software development projects in our lab (such as <a href="http://fmriprep.org/">fMRIPrep</a> and <a href="http://mriqc.org/">MRIQC</a>), so it was a natural choice for this project as well. The use of CircleCI for this project is made particularly easy by the fact that both the book source and the web site for the book are hosted on Github — the ability to set up hooks between Github and CircleCI allows two important features. First, it allows us to automatically trigger a rebuild of the site whenever there is a new push to the source repo. Second, it allows CircleCI to push a new copy of the book files to the separate repo that the site is served from. Here are the steps to setting this up - see the <a href="https://github.com/poldrack/psych10-book/blob/master/Makefile">Makefile</a> and <a href="https://github.com/poldrack/psych10-book/blob/master/.circleci/config.yml">CircleCI config.yml file</a> in the repo for questions. And if you come across anything that I missed please leave a comment below! Create a CircleCI account linked to the relevant GitHub account.Add the source repo to CircleCI.Create the CircleCI config.yml file. Here is the content of my config file, with comments added to explain each step: version: 2jobs: build: docker:# this is my custom Docker image - image: poldrack/statsthinking21 CircleCI spins up a VM specified by a Docker image, to which we can then add any necessary additional software pieces. I initially started with an image with R and the tidyverse preinstalled (<a href="https://hub.docker.com/r/rocker/tidyverse/">https://hub.docker.com/r/rocker/tidyverse/</a>) but installing all of the R packages as well as the TeX distribution needed to compile the PDF took a very long time, quickly using up the 1,000 build minutes per month that come with the CircleCI free plan. In order to save this time I build a custom Docker container (<a href="https://github.com/poldrack/psych10-book/blob/master/Dockerfile">Dockerfile</a>) that incorporates all of the dependencies needed to build the book; this way, CircleCI can simply pull <a href="https://hub.docker.com/r/poldrack/statsthinking21/">the container from my DockerHub repo</a>and run it straight away rather than having to build a bunch of R packages. steps: - add_ssh_keys: fingerprints: - “73:90:5e:75:b6:2c:3c:a3:46:51:4a:09:ac:d9:84:0f” In order to be able to push to a github repo, CircleCI needs a way to authenticate itself. A relatively easy way to do this is to generate an SSH key and install the public key portion as a “deploy key” on the Github repo, then install the private key as an SSH key on CircleCI. I had problems with this until I realized that it requires a very specific type of SSH key (a PEM key using RSA encryption), which I generated on my Mac using the following command: ssh-keygen -m PEM -t rsa -C “<a href="mailto:poldrack@gmail.com">poldrack@gmail.com</a>” # check out the repo to the VM - it also becomes the working directory - checkout# I forgot to install ssh in the docker image, so install it here as we will need it for the github push below - run: apt-get install -y ssh# now run all of the rendering commands - run: name: rendering pdf command: | make render-pdf - run: name: rendering epub command: | make render-epub - run: name: rendering gitbook command: | make render-gitbook The Makefile in the source repo contains the commands to render the book in each of the three formats that we distribute: Gitbook, PDF, and EPUB. Here we build each of those. # push the rendered site files to its repo on github - run: name: check out site repo command: | cd /tmp ssh-keyscan <a href="http://github.com/">github.com</a> &gt;&gt; ~/.ssh/known_hostsThe ssh-keyscan command is necessary in order to allow headless operation of the ssh command necessary to access github below. Otherwise the git clone command will sit and wait at the host authentication prompt for a keypress that will never come.# clone the site repo into a separate directory git clone <a href="mailto:git@github.com">git@github.com</a>:psych10/thinkstats.git cd thinkstats# copy all of the site files into the site repo directory cp -r ~/project/_book/* . git add .# necessary config to push git config –global user.email <a href="mailto:poldrack@gmail.com">poldrack@gmail.com</a> git config –global user.name “Russ Poldrack” git commit -m”automated update” git push origin master That’s it! CircleCI should now build and deploy the book any time there is a new push to the repo. Don’t forget to add a CircleCI badge to the README to show off your work!</p>
 
 
 

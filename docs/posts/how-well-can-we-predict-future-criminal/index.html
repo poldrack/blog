@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Russ Poldrack">
-<meta name="dcterms.date" content="2010-10-14">
+<meta name="dcterms.date" content="2013-04-06">
 
-<title>Russ Poldrack’s blog - Welcome</title>
+<title>Russ Poldrack’s blog - How well can we predict future criminal acts from fMRI data?</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -105,7 +105,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Welcome</h1>
+      <h1 class="title">How well can we predict future criminal acts from fMRI data?</h1>
                       </div>
   </div>
     
@@ -122,7 +122,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">October 14, 2010</p>
+        <p class="date">April 6, 2013</p>
       </div>
     </div>
     
@@ -140,10 +140,22 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<p><em>This was originally posted on blogger <a href="https://russpoldrack.blogspot.com/2010/10/welcome.html">here</a></em>.</p>
-<p>I’ve set up this personal site so I will have a place to spout off about the various things that I think about that don’t fall under the purview of the my <a href="http://www.huffingtonpost.com/russell-poldrack">Huffington Post blog</a> (which is focused on implications of research for daily living) or the <a href="http://blog.cognitiveatlas.org/">Cognitive Atlas blog</a> (which is focused on topics related to our <a href="http://www.cognitiveatlas.org/">Cognitive Atlas project</a>). I will probably focus mostly on science issues, productivity tools and workflows, and food and travel.</p>
+<p><em>This was originally posted on blogger <a href="https://russpoldrack.blogspot.com/2013/04/how-well-can-we-predict-future-criminal.html">here</a></em>.</p>
+<p>A <a href="http://www.pnas.org/content/early/2013/03/19/1219302110">paper recently published in PNAS by Aharoni et al.&nbsp;entitled “Neuroprediction of future arrest”</a> has claimed to demonstrate that future criminal acts can be predicted using fMRI data. In the study, the group performed fMRI on 96 individuals who had previously been incarcerated, using a go/no-go task. They then followed up the individuals (up to four years after release) and recorded whether they had been rearrested. A survival model was used to model the likelihood of being re-arrested, which showed that activation in the dorsal anterior cingulate cortex (dACC) during the go/no-go task was associated with rearrest, such that individuals with higher levels of dACC activity during the task were less likely to be rearrested. This fits with the idea that the dACC is involved in cognitive control, and that cognitive control is important for controlling impulses that might land one back in jail. For example, using a median split of dACC activity, they found that the upper half had a rearrest rate of 46% while the lower half had a rearrest rate of 60%. Survival models also showed that dACC was the only variable amongst a number tested that had a significant relation to rearrest.This is a very impressive study, made even more so by the fact that the authors released the data for the tested variables (in spreadsheet form) with the paper. However, there is one critical shortcoming to the analyses reported in the paper, which is that they do not examine out-of-sample predictive accuracy. <a href="http://www.russpoldrack.org/2012/12/the-perils-of-leave-one-out.html">As I have pointed out recently</a>, statistical relationships within a sample generally provide an overly optimistic estimate of the ability to generalize to new samples. In order to be able to claim that one can “predict” in a real-world sense, one has to validate the predictive accuracy of the technique on out-of-sample data.With the help of Jeanette Mumford (my local statistical guru), I took the data from the Aharoni paper and examined the ability to predict rearrest on out-of-sample data using crossvalidation; the code and data for this analysis are available at <a href="https://github.com/poldrack/criminalprediction">https://github.com/poldrack/criminalprediction</a>. The proper way to model the data is using a survival model that can deal with censored observations (since subjects differed in how long they were followed). We did this in R using the Cox regression model from the R rms library. We replicated the reported finding of a significant effect of dACC activation on rearrest in the Cox model, with parameter estimates matching those reported in the paper, suggesting to me that we had correctly replicated their analysis. We examined predictive accuracy using the pec library for R, which generates out-of-sample prediction error curves for survival models. We used 10-fold crossvalidation to estimate the prediction error, and ran this 100 times to assess the variability of the prediction error estimates. The figure below shows the prediction error as a function of time for the reference model (which simply estimates a single survival curve for the whole group) in black, and the model including dACC activation as a predictor in green; the thick lines represent the mean prediction error across the 100 crossvalidation runs, and the light lines represent the curve for each individual run. This analysis shows that there is a slight benefit to out-of-sample prediction of future rearrest using dACC activation, particularly in the period from 20 to 48 months after release. However, this added prediction ability is exceedingly small; if we take the integrated Brier score across the period of 0-48 months, which is a metric for assessment of probabilistic predictions (taking the value of 0 for perfect predictions and 1 for completely inaccurate predictions), we see that the score for the reference model is 0.214 and the score for the model with dACC as a predictor is 0.207. We found slightly improved prediction (integrated Brier score of 0.203) if we also added Age alongside dACC as a predictor. The take-away message from this analysis is that fMRI can indeed provide information relevant to whether an individual will be rearrested for a crime. However, this added predictability is exceedingly small, and we don’t know whether there are other (unmeasured) demographic or behavioral measures that might provide similar predictive power. In addition, these analyses highlight the importance of using out-of-sample prediction analyses whenever one makes a claim about the predictive ability of neuroimaging data for any outcome. We are currently preparing a manuscript that will address the issue of “neuroprediction” in greater detail.</p>
+<hr>
+<section id="comments-captured-from-original-post-on-blogger" class="level2">
+<h2 class="anchored" data-anchor-id="comments-captured-from-original-post-on-blogger">4 comments captured from <a href="https://russpoldrack.blogspot.com/2013/04/how-well-can-we-predict-future-criminal.html">original post</a> on Blogger</h2>
+<p><strong>Unknown said on 2013-04-18</strong></p>
+<p>This is a nice first step in improving prediction models using neuroimaging. What did you use for your out-of-sample data? I’m working on a manuscript using imaging data to predict relapse to substance use. It would be nice to test my model on out-of-sample data and include that information in the manuscript.</p>
+<p><strong>Ross said on 2013-05-10</strong></p>
+<p>As I understand there’s no out of sample data. They do cross-validation, so they run their model on 90% of the data, and test it on the 10% that was left out. The 10-fold means they do this ten times with leaving out each of 10 10% pieces. Then they do some randomness, in generating randomly the different breakdowns of training versus validation sets.</p>
+<p><strong>hcp4715 said on 2016-08-13</strong></p>
+<p>Hi, Prof.&nbsp;Poldrack, This is a very nice post!<br>I noticed that the authors published a new paper about this problem, and they concluded that "Modest to strong discrimination and calibration accuracy were found, providing additional support for the utility of neurobiological measures in predicting rearrest." I am not expert on the methods, but interested whether neuroimaging data could improve the predictive accuracy. So I wish you could give some comments on this new paper: http://www.tandfonline.com/doi/abs/10.1080/17470919.2014.907201</p>
+<p><strong>Russ Poldrack said on 2016-08-13</strong></p>
+<p>Thanks for your comment! I don’t think that paper fully addresses the problem, because it doesn’t examine out-of-sample prediction as we did in our analyses.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

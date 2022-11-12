@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.267">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Russ Poldrack">
+<meta name="dcterms.date" content="2013-02-20">
+
+<title>Russ Poldrack’s blog - Anatomy of a coding error</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Russ Poldrack’s blog</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="https://profiles.stanford.edu/russell-poldrack">
+ <span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/poldrack"><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://mastodon.online/@Russpoldrack"><i class="bi bi-mastodon" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Anatomy of a coding error</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Russ Poldrack </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">February 20, 2013</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<p><em>This was originally posted on blogger <a href="https://russpoldrack.blogspot.com/2013/02/anatomy-of-coding-error.html">here</a></em>.</p>
+<p>A few days ago, one of the students who I collaborate with found a very serious mistake in some code that I had written. The code (which is <a href="https://github.com/poldrack/openfmri/tree/master/openfmri_paper">openly available through my github repo</a>) performed a classification analysis using the data from a number of studies from the <a href="http://www.openfmri.org/">openfmri</a> project, and the results are included in a paper that is currently under review. None of us likes to admit mistakes, but <a href="http://www.nature.com/news/2010/101013/full/467775a.html">it’s clear that they happen often</a>, and the only way to learn from them is to talk about them. This is why I strongly encourage my students to tell me about their mistakes and discuss them in our lab meeting. This particular mistake highlights several important points:Sharing code is good, but only if someone else actually looks at it very closely.You can’t rely on tools to fail when you make a mistake.Classifiers are very good at finding information, even if it’s not the information you had in mind.The code in question is <a href="https://github.com/poldrack/openfmri/blob/master/openfmri_paper/4_classify_task_wholebrain.py">4_classify_wholebrain.py</a> which reads in the processed data (saved in a numpy file) and classifies each dataset (with about 184K features and 400 observations) into one of 23 different classes (representing different tasks). The code was made publicly available before submitting the paper; while I have no way of knowing whether the reviewers have examined it, it’s fair to say that even if they did, they would most likely not have caught this particular bug unless they were very eagle-eyed. As it happens, a student here was trying to reproduce my analyses independently, and was finding much lower classification accuracies than the ones I had reported. As he dug into my code, it became clear that this difference was driven by a (lazy, in hindsight) coding mistake on my part.<a href="http://www.blogger.com/"></a>The original code can be viewed <a href="https://github.com/poldrack/openfmri/blob/c0555e575436e9203db9496ef04d95abec986f54/openfmri_paper/4_classify_task_wholebrain.py">here</a> - the snippet in question (cleaned up a bit) is:skf=StratifiedKFold(labels,8)if trainsvm: pred=N.zeros(len(labels)) for train,test in skf: clf=LinearSVC() clf.fit(data[train],labels[train]) pred[test]=clf.predict(data[test])Pretty simple - it creates a crossvalidation object using sklearn, then loops through, fitting to the train folds and computing the predicted class for the test fold. Running this, I got about 93% test accuracy on the multiclass problem; had I gotten 100% accuracy I would have been sure that there was a problem, but given that we have previously gotten around 80% for similar problems, I was not terribly shocked by the high accuracy. Here is the problem: In [9]: data.shapeOut[9]: (182609, 400)When I put the data into the numpy object, I had voxels as the first dimension, whereas for classification analysis one would usually put the observations in rows rather than columns. Now, numpy is smart enough that when I give it the train list as an array index, it uses it as an index on the first dimension. However, because of the transposition of the dimensions in the data, the effect was to classify voxels, rather than subjects:In [10]: data[train].shapeOut[10]: (350, 400)In [11]: data[test].shapeOut[11]: (50, 400)When I fix this by using the proper data reference (as in the current revision of the code on the repo), then it looks as it should (i.e.&nbsp;all voxels included for the subjects in the train or test folds):In [12]: data[:,train].T.shapeOut[12]: (350, 182609)In [14]: data[:,test].T.shapeOut[14]: (50, 182609)When I run this with the fixed code I get about 53% accuracy; still well above chance (remember that it’s a 23-class problem), but much less than the 93% we had gotten previously.It’s worth noting that randomization tests with the flawed code showed the expected null distribution; the source of the information being used by the classifier is a bit of a mystery, but likely reflects the fact that the distance of the voxels in the matrix is related to their distance in space in the brain, and the labels were grouped together sequentially in the label file, such that they were correlated with physical distance in the brain and thus provided information that could drive the classification.This is clearly a worst-case scenario for anyone who codes up their own analyses; the paper has already been submitted and you find an error that greatly changes the results. Fortunately, the exact level of classification accuracy is not central to the paper in question, but it’s worrisome nonetheless.What are the lessons to be learned here? Most concretely, it’s important to check the size of data structures whenever you are slicing arrays. I was lazy in my coding of the crossvalidation loop, and I should have checked that the size of the dataset being fed into the classifier was what I expected it to be (the difference between 400 and 182609 would be pretty obvious). It might have added an extra 30 seconds to my initial coding time but would have saved me from a huge headache and hours of time needed to rerun all of the analyses.Second, sharing code is necessary but not sufficient for finding problems. Someone could have grabbed my code and gotten exactly the same results that I got; only if they looked at the shape of the sliced arrays would they have noticed a problem. I am becoming increasingly convinced that if you really want to believe a computational result, the strongest way to do that is to have an independent person try to replicate it without using your shared code. Failing that, one really wants to have a validation dataset that one can feed into the program where you know exactly what the output should be; randomization of labels is one way of doing this (i.e., where the outcome should be chance) but you also want to do this with real signal as well. Unfortunately this is not trivial for the kinds of analyses that we do, but perhaps some better data simulators would help make it easier.Finally, there is a meta-point about talking openly about these kinds of errors. We know that they happen all the time, yet few people ever talk openly about their errors. I hope that others will take my lead in talking openly about errors they have made so that people can learn from them and be more motivated to spend the extra time to write robust code.</p>
+<hr>
+<section id="comments-captured-from-original-post-on-blogger" class="level2">
+<h2 class="anchored" data-anchor-id="comments-captured-from-original-post-on-blogger">13 comments captured from <a href="https://russpoldrack.blogspot.com/2013/02/anatomy-of-coding-error.html">original post</a> on Blogger</h2>
+<p><strong>practiCal fMRI said on 2013-02-20</strong></p>
+<p>I have a draft blog post gathering e-dust that bears the working title, "Whose job is method validation, anyway?" It was motivated by the acquisition end of the fMRI pipeline - my concern - but the issues seem to pervade the entire operation.<br><br>One of my points is (er, will be) that the party responsible for creating a widget isn’t necessarily the one who should be responsible for validating it. Indeed, one can make a strong case for separating the validation from the production because of conflicts of interest, over familiarity, etc. <br><br>In my post I’ll be pointing a lot of fingers. My contention is that we all bear a part of the responsibility, no-one less than the person who takes the widget you’ve made and uses it without first determining what (independent) validation has been performed.<br><br>So, I congratulate you on your mea culpa and I hope that it motivates serious (re)consideration of how we use the tools we have at our disposal in neuroimaging. Because no lives are at stake we can be rather lax when it comes to insisting on, or checking out, the validation of our methods. Bad, bad, bad!</p>
+<p><strong>Russ Poldrack said on 2013-02-20</strong></p>
+<p>Thanks Ben - I’ll look forward to your post!</p>
+<p><strong>StokesBlog said on 2013-02-21</strong></p>
+<p>Hi Russ,<br>Thanks for the important post - I sometimes feel like errors like this might be a pretty serious source of false positives in the literature. <br><br>I too have a draft blog post gathering dust (titled: "Biased Debugging"), which considers how the debugging process is non-random, biased in favour of positive and sensible-looking results. If an error throws up a crazy (or non-significant result), we are more likely to track it down than if it fits nicely with our hopes and expectations. <br><br>Given the increasing complexity data analyses, it is naive to think that the published data are free of coding errors. If they are random, then the additional noise is probably harmless enough. But if they are not random, and biased in favour of positive findings, then perhaps biased debugging is a serious contributor to the statistical bias that deserves more attention. <br><br>As you say, sharing code is not always sufficient (though certainly better for eventual detection than not sharing). Only independent verification using fresh code is 100% safe. Incidentally, just yesterday I asked my graduate student to code up his own version of mahalanobis distance for MEG rather than use mine, just to make sure that our results converged… <br><br>Your other point is also crucial - we need to be prepared to admit our mistakes. This is perhaps especially important for graduate students. If students do not feel that they are able to admit their mistakes to their supervisors, then there is little chance for redress. Errors like these should not be seen as a sign of failure, in fact more likely the opposite. We should be encouraged to try new things, to write custom scripts, implement new analytic procedures, and innovation is always going to be error prone. Perfect coding is as unrealistic as perfect prose - just think of the grammatical errors that sneak through endless drafts seen by all co-authors. Then think, whoever goes through thousands of lines of matlab code as carefully as the manuscript being prepared for submission!? <br></p>
+<p><strong>Russ Poldrack said on 2013-02-21</strong></p>
+<p>Mark - very good point regarding the biases that can emerge from debugging. Hope to see your full post soon!</p>
+<p><strong>Michael Frank said on 2013-02-22</strong></p>
+<p>Hi Russ, <br><br>This is great! <br><br>I completely agree about code replication. It’s amazing how easy it is to catch errors that go in the wrong direction (that decrease your results) and how hard it is to catch those that go in the right direction. Double-entry (recoding from scratch) really seems like the gold standard. <br><br>Do you have thoughts about practices that help you avoid errors? It’s really important to produce reliable code but at the same time it seems cripplingly slow to implement unit tests for every analysis you do. So I have struggled with what concrete recommendations to make to students and how to implement error checking in my own coding practice… <br><br>best, <br><br>Mike Frank</p>
+<p><strong>Russ Poldrack said on 2013-02-22</strong></p>
+<p>Hey Mike - thanks for your comments. I agree that it’s really hard to come up with general recommendations without going down the slippery slope towards full-blown unit testing. I’ll think a bit more and maybe put together another post with some of the major places where I think problems are most likely.</p>
+<p><strong>Russ Poldrack said on 2013-02-22</strong></p>
+<p>hi Michael - I think you are right that refactoring into a more general library would be one useful way to address this issue. I am getting better at that, but old habits still die hard.</p>
+<p><strong>Unknown said on 2013-02-22</strong></p>
+<p>By the way, it just occurred to me to point out that the Github Pull Request interface is probably the best solution for collaborative code review. Here’s an example from the scikit-learn repo: https://github.com/scikit-learn/scikit-learn/pull/1628 that I think exemplifies pull requests at their best. You can comment at varying levels of granularity down to specific lines, code is updated live as changes are made, and it provides a public record that’s wrapped up together with the code itself. <br><br>mw</p>
+<p><strong>satra said on 2013-02-23</strong></p>
+<p>thanks for sharing this. validation and testing are two of the least thought about areas in the brain imaging community and that needs to change. michael hanke is leading a project called testkraut, an effort to address testing concerns for workflows and software. <br><br>also, our current publication life-cycle/peer review/culture needs to address reproducibility as a core principle. i would rather see half the number of publications from a lab as long as each publication was independently verified on a different dataset. this may not only addresses the possibility of code error but would also provide an additional stamp on the veracity of the result.<br><br><br></p>
+<p><strong>Vadim said on 2013-02-24</strong></p>
+<p>The smarter the programming language the more cautious one should be. All those implicit conversions can be extremely dangerous (also in C++). Matlab I think is better in this extent. <br><br>The striking thing which I think is missing completely in academic coding comparing to software industry is a code peer-review. In many industry companies you just cannot commit a code to source-control system without additional pair of eyes look at your code. It is amazing how many bugs one can catch when he just explains someone what he just programmed. So, basically, in many cases it can be even a doll and not a peer :)<br><br><br><br><br></p>
+<p><strong>Russ Poldrack said on 2013-02-24</strong></p>
+<p>That’s a great point about code review - we have started doing this in my lab (we have the luxury of a full time software developer on staff). Perhaps I should go out and buy a bunch of dolls for the lab… :-)</p>
+<p><strong>StokesBlog said on 2013-02-24</strong></p>
+<p>As promised, I managed to dust off the old draft at the Brain Box: http://the-brain-box.blogspot.co.uk/2013/02/biased-debugging.html<br></p>
+<p><strong>Russ Poldrack said on 2013-02-25</strong></p>
+<p>Here is another recent example where what looks like a very small error (using int instead of float type for a specific variable) resulted in unreasonably high accuracy on the Netflix prediction problem - http://nuit-blanche.blogspot.fr/2013/02/this-weeks-guardians-of-science-zeno.html</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

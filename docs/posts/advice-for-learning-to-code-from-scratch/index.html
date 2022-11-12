@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.267">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Russ Poldrack">
+<meta name="dcterms.date" content="2016-05-20">
+
+<title>Russ Poldrack’s blog - Advice for learning to code from scratch</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Russ Poldrack’s blog</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="https://profiles.stanford.edu/russell-poldrack">
+ <span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/poldrack"><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://mastodon.online/@Russpoldrack"><i class="bi bi-mastodon" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Advice for learning to code from scratch</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Russ Poldrack </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">May 20, 2016</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<p><em>This was originally posted on blogger <a href="https://russpoldrack.blogspot.com/2016/05/advice-for-learning-to-code-from-scratch.html">here</a></em>.</p>
+<p>I met this week with a psychology student who was interested in learning to code but had absolutely no experience. I personally think it’s a travesty that programming is not part of the basic psychology curriculum, because doing novel and interesting research in psychology increasingly requires the ability to collect and work with large datasets and build new analysis tools, which are almost impossible without solid coding skills. Because it’s been a while since I learned to code (<a href="http://www.russpoldrack.org/2010/11/my-personal-computing-history.html">back when programs were stored on cassette tapes</a>), I decided to ask my friends on the interwebs for some suggestions. I got some really great feedback, which I thought I would synthesize for others who might be in the same boat. Some of the big questions that one should probably answer before getting started are:Why do you want to learn to code? For most people who land in my office, it’s because they want to be able to analyze and wrangle data, run simulations, implement computational models, or create experiments to collect data. How do you learn best? I can’t stand watching videos, but some people swear by them. Some people like to just jump in and start doing, whereas others like to learn the concepts and theories first. Different strokes…What language should you start with? This is the stuff of religious wars. What’s important to realize, though, is that learning to program is not the same as learning to use a specific language. Programming is about how to think algorithmically to solve problems; the specific language is just an expression of that thinking. That said, languages differ in lots of ways, and some are more useful than others for particular purposes. My feeling is that one should start by learning a first-class language, because it will be easier to learn good practices that are more general. Your choice of a general purpose language should probably be driven by the field you are in; neuroscientists are increasingly turning to Python, whereas in genomics it seems that Java is very popular. I personally think that Python offers a nice mix of power and usability, and it’s the language that I encourage everyone to start with. However, if all you care about doing it performing statistical analyses, then learning R might be your first choice, whereas if you just want to build experiments for mTurk, then Javascript might be the answer. There may be some problem for which MATLAB is the right answer, but I’m no longer sure what it is. A caveat to all of this is that if you have friends or colleagues who are programming, then you should strongly consider using whatever language they are using, because they will be your best source of help.What problem do you want to solve? Some people can learn for the sake of learning, but I find that I need a problem in order to keep me motivated. I would recommend thinking of a relevant problem that you want to solve and then targeting your learning towards that problem. One good general strategy is to find a paper in your area of research interest, and try to implement their analysis. Another (suggested by Christina van Heer) is to take some data output from an experiment (e.g.&nbsp;in an Excel file), read it in, and compute some basic statistics. If you don’t have your own data, another alternative is to take a large open dataset (such as health data from <a href="http://www.cdc.gov/nchs/nhanes/">NHANES</a> or an openfmri dataset from <a href="http://openfmri.org/">openfmri.org</a> ) and try to wrangle the data into a format that lets you ask an interesting question.OK then, so where do you look for help in getting started?The overwhelming favorite in my social media poll was <a href="http://codeacademy.com/">codeacademy</a>. It offers interactive exercises in lots of different languages, including Python. Another Pythonic suggestion was <a href="http://learnpythonthehardway.org/book/">http://learnpythonthehardway.org/book/</a> which looks quite good. For those of you who prefer video courses, there were also a number of votes for online courses, including those from Coursera:<a href="https://www.coursera.org/learn/python">“Python for Everybody”</a><a href="https://www.coursera.org/learn/interactive-python-1?trk=profile_certification_title">“An Introduction to Interactive Programming with Python”</a>EdX:<a href="https://www.edx.org/course/introduction-r-data-science-microsoft-dat204x">Introduction to R for data science</a><a href="https://www.edx.org/course/introduction-computer-science-harvardx-cs50x">Harvard’s Introduction to Computer Science</a>And FutureLearn:<a href="https://www.futurelearn.com/courses/learn-to-code">Learn to Code for Data Analysis</a>If you like video courses then these would be a good option. Other suggestions included:<a href="http://health.adelaide.edu.au/psychology/ccs/docs/lsr/lsr-0.3.pdf">Learning statistics with R: A tutorial for psychologists and other beginners</a>(free pdf book)<a href="http://pythontutor.com/">[http://pythontutor.com](http://pythontutor.com/)</a><a href="http://pythontutor.com/">http://pythontutor.com</a> - this looks like a pretty cool tool to help see what a program is doing when it runs<a href="http://tryr.codeschool.com/">http://tryr.codeschool.com</a><a href="https://www.playcodemonkey.com/">codemonkey</a> (coding in a game environment)<a href="http://swirlstats.com/">Swirl for R</a><a href="http://gestaltrevision.be/wiki/python/python">Python for Vision Research</a><a href="http://www.djmannion.net/programming_vision/">Programming for Psychology in Pytho</a>n<a href="http://datacamp.com/">Datacamp</a><a href="http://lynda.com/">lynda.com</a> (commercial, but offers a free trial) Here are some suggested sites with various potentially useful tips<a href="http://neurofractal.tumblr.com/post/114928822703/resources-for-learning-to-program-using-python-and">Resources for Learning to Program using Python and Code Experiments Using Psychopy</a> <a href="http://stackoverflow.com/questions/3605337/reading-python-source-code-to-improve-programming-skills/3605360">Reading Python source code to improve programming skill</a>s<a href="https://ramnathv.github.io/pycon2014-r/">Introduction to R</a><a href="http://imgur.com/gallery/BL6Vs">6 inspiring web sites that teach you to cod</a>e<a href="http://kendrickkay.net/psych5007/">Kendrick Kay’s course on Statistics and Data Analysis in MATLAB</a>Several people recommended <a href="https://pythonhosted.org/spyder/">Spyder</a> as a development environment for Python (though I gave up on it because I found it to be too sluggish on the Mac)<a href="https://github.com/ujjwalkarn/DataSciencePython">Here is a nice curated list of python tutorials for data science and machine learning</a><a href="http://www.inc.com/larry-kim/9-places-you-can-learn-how-to-code-for-free.html">9 places you can learn how to code (for free)</a>Finally, it’s also worth keeping an eye out for local Software Carpentry workshops.If you have additional suggestions, please leave them in the comments!</p>
+<hr>
+<section id="comments-captured-from-original-post-on-blogger" class="level2">
+<h2 class="anchored" data-anchor-id="comments-captured-from-original-post-on-blogger">8 comments captured from <a href="https://russpoldrack.blogspot.com/2016/05/advice-for-learning-to-code-from-scratch.html">original post</a> on Blogger</h2>
+<p><strong>Breeding in Captivity said on 2016-05-20</strong></p>
+<p>For Matlab (I know, soooo old-fashioned) the easiest way to start is probably Geoff and my book<br><br>http://www.amazon.com/Matlab-Behavioral-Sciences-Program-Experiment/dp/0195320689/ref=sr_1_1?ie=UTF8&amp;qid=1463778426&amp;sr=8-1&amp;keywords=matlab+for+the+behavioral+sciences<br></p>
+<p><strong>Joe Orr said on 2016-05-20</strong></p>
+<p>Do you have any thoughts/ recommendations on how to establish coding in the psych undergraduate curriculum?</p>
+<p><strong>Unknown said on 2016-05-20</strong></p>
+<p>Surely C/C++ should be mentioned? They’re hard, yes, but my God will you learn a lot.</p>
+<p><strong>Leonardo said on 2016-05-22</strong></p>
+<p>Sure, but where to stop? Why not recommend some Lisp or Haskell? <br>C was the first programming language I learned, but I feel its current relevance is only for performance optimization, not for science.</p>
+<p><strong>Unknown said on 2016-05-24</strong></p>
+<p>I also recommend the series of books by Allen Downey (e.g.&nbsp;Think Python), available free online at http://greenteapress.com/wp/</p>
+<p><strong>Unknown said on 2016-05-31</strong></p>
+<p>Late to the game here but PyQuick from Google was a great way for me to get started with Python.<br><br>https://developers.google.com/edu/python/introduction</p>
+<p><strong>Unknown said on 2016-07-17</strong></p>
+<p>Nice, I really like DJ Mannions lectures. They are really good for a Psychologist wanting to learn programming. Personally, I think that if you manage to learn Python, which is a quite easy language to learn, you can learn more advanced languages later. <br><br>I also would like to add a very recent guide on how to use Python programming in Psychology. I came across this post <a href="http://blog.efpsa.org/2016/07/12/python-programming-in-psychology-from-data-collection-to-analysis" rel="nofollow">Python programming in Psychology</a>. In that post you get to learn how to use Python from creating your experiment to visualizing and analysing collected data.</p>
+<p><strong>Nickole Dinardo said on 2016-10-29</strong></p>
+<p>No doubt it’s impressive post.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

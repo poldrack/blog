@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.267">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Russ Poldrack">
+<meta name="dcterms.date" content="2018-04-17">
+
+<title>Russ Poldrack’s blog - How can one do reproducible science with limited resources?</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Russ Poldrack’s blog</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="https://profiles.stanford.edu/russell-poldrack">
+ <span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/poldrack"><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://mastodon.online/@Russpoldrack"><i class="bi bi-mastodon" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">How can one do reproducible science with limited resources?</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Russ Poldrack </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">April 17, 2018</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<p><em>This was originally posted on blogger <a href="https://russpoldrack.blogspot.com/2018/04/how-can-one-do-reproducible-science.html">here</a></em>.</p>
+<p>When I visit other universities to talk, we often end up having free-form discussions about reproducibility at some point during the visit. During a recent such discussion, one of the students raised a question that regularly comes up in various guises. Imagine you are a graduate student who desperately wants to do fMRI research, but your mentor doesn’t have a large grant to support your study. You cobble together funds to collect a dataset of 20 subjects performing your new cognitive task, and you wish to identify the whole-brain activity pattern associated with the task. Then you happen to read “<a href="http://pilab.psy.utexas.edu/publications/Poldrack_NRN_2017.pdf">Scanning the Horizon</a>” which points out that a study with only 20 subjects is not even sufficiently powered to find the activation expected from a coarse comparison of motor activity to rest, much less to find the subtle signature of a complex cognitive process. What are you to do?In these discussions, I often make a point that is statistically correct but personally painful to our hypothetical student: The likelihood of such a study identifying a true positive result if it exists is very low, and the likelihood of any positive results being false is high (as outlined by <a href="https://www.nature.com/articles/nrn3475">Button et al, 2013</a>), even if the study was fully pre-registered and there is no p-hacking. In the language of clinical trials, this study is futile, in the sense that it is highly unlikely to achieve its aims. In fact, such a study is arguably unethical, since the (however miniscule) risks of participating in the study are not offset by any potential benefit to the subject or to society. This raises a dilemma: How are students with limited access to research funding supposed to gain experience in an expensive area of research and test their ideas against nature? I have struggled with how to answer these questions over the last few years. I certainly wouldn’t want to suggest that only students from well-funded labs or institutions should be able to do the science that they want to do. But at the same time, giving students a pass on futile studies will have dangerous influence, since many of those studies will be submitted for publication and will thus increase the number of false reports (positive or negative) in the literature. As Tal Yarkoni said in his outstanding “<a href="http://pilab.psy.utexas.edu/publications/Yarkoni_PPS_2009.pdf">Big Correlations in Little Studies</a>” paper:Consistently running studies that are closer to 0% power than to 80% power is a sure way to ensure a perpetual state of mixed findings and replication failures.Thus, I don’t think that the answer is to say that it’s OK to run underpowered studies. In thinking about this issue, I’ve come up with a few possible ways to address the challenge. 1) “if you can’t answer the question you love, love the question you can”In an <a href="http://web.mit.edu/bcs/nklab/media/pdfs/Kanwisher.JN2017.pdf">outstanding reflection published last year in the Journal of Neuroscience</a>, Nancy Kanwisher said the following in the context of her early work on face perception:I had never worked on face perception because I considered it to be a special case, less important than the general case of object perception. But I needed to stop messing around and discover something, so I cultivated an interest in faces. To paraphrase Stephen Stills, if you can’t answer the question you love, love the question you can.In the case of fMRI, one way to find a question that you can answer is to look at shared datasets. There is now a huge variety of shared data available from resources including <a href="http://openfmri.org/">OpenfMRI</a>/<a href="https://openneuro.org/">OpenNeuro</a>, <a href="http://fcon_1000.projects.nitrc.org/">FCP/INDI</a>, ADNI, the <a href="https://www.humanconnectome.org/">Human Connectome Project</a>, and <a href="https://www.oasis-brains.org/">OASIS</a>, just to name a few. If a relevant dataset is not available openly but you know of a paper where someone has reported such a dataset, you can also contact those authors and ask whether they would be willing to share their data (often with an agreement of coauthorship). An example of this from our lab is a recent paper by Mac Shine (published in <a href="https://www.mitpressjournals.org/doi/pdf/10.1162/NETN_a_00042">Network Neuroscience</a>), in which he contacted the authors of two separate papers with relevant datasets and asked them to share the data. Both agreed, and the results came together into a nice package. These were pharmacological fMRI studies that would not have even been possible within my lab, so the sharing of data really did open up a new horizon for us. Another alternative is to do a meta-analysis, either based on data available from sites like Neurosynth or Neurovault, or by requesting data directly from researchers. As an example, a student in one of my graduate classes did a final project in which he requested the data underlying meta-analyses published by two other groups, and then combined these to perform a composite meta-analysis, which was ultimately <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5243799/">published</a>. 2) Focus on cognitive psychology and/or computational models for now One of my laments regarding the training of cognitive neuroscientists in today’s climate is that their training is generally tilted much more strongly towards the neuroscience side (and particularly focused on neuroimaging methods), at the expense of training in good old fashioned cognitive psychology. As should be clear from many of my writings, I think that a solid training in cognitive psychology is essential in order to do good cognitive neuroscience; certainly just as important as knowing how to properly analyze fMRI data. Increasingly, this means thinking about computational models for cognitive processes. Spending your graduate years focusing on designing cognitive studies and building computational models of them will put you in an outstanding position to get a good postdoc in a neuroimaging lab that has the resources to support the kind of larger neuroimaging studies that are now required for reproducibility. I’ve had a couple of people from pure cognitive psychology backgrounds enter my lab as postdocs, and their NIH fellowship applications were both funded on the first try, because the case for additional training in neuroscience was so clear. Once you become skilled at cognition and (especially) computation, imaging researchers will be chomping at the bit to work with you (I know I would!). In the meantime you can also start to develop chops at neuroimaging analysis using shared data as outlined in #1 above. 3) Team up The field of genetics went through a similar reckoning with underpowered studies more than a decade ago, and the standard in that field is now for large genome-wide association studies which often include tens of thousands of subjects. They also usually include tens of authors on each paper, because amassing such large samples requires more resources than any one lab can possess. This strategy has started to appear in neuroimaging through the <a href="http://enigma.ini.usc.edu/">ENIGMA consortium</a>, which has brought together data from many different imaging labs to do imaging genetics analyses. If there are other labs working on similar problems, see if you can team up with them to run a larger study; you will likely have to make compromises, but a reproducible study is worth it (cf.&nbsp;#1 above). 4) Think like a visual neuroscientist This one won’t work for every question, but in some cases it’s possible to focus your investigation on a much smaller number of individuals who are characterized much more thoroughly; instead of collecting an hour of data each on 20 people, collect 4 hours of data per person on 5 people. This is the standard approach in visual neuroscience, where studies will often have just a few subjects who have been studied in great detail, sometimes with many hours of scanning per individual (e.g.&nbsp;see any of the recent papers from Jack Gallant’s lab for examples of this strategy). Under this strategy you don’t use standard group statistics, but instead present the detailed results from each individual; if they are consistent enough across the individuals then this might be enough to convince reviewers, though the farther you get from basic sensory/motor systems (where the variance between individuals is expected to be relatively low) the harder it will be to convince them. It is essential to keep in mind that this kind of analysis does not allow one to generalize beyond the sample of individuals who were included in the study, so any resulting papers will be necessarily limited in the conclusions they can draw. 5) Carpe noctem At some imaging centers, the scanning rates become drastically lower during off hours, such that the funds that would buy 20 hours of scanning during prime time might stretch to buy 50 or more hours late at night. A well known case is the Midnight Scan Club at Washington University, which <a href="https://www.sciencefriday.com/segments/the-midnight-scan-club/">famously</a> used cheap late night scan time to <a href="https://www.ncbi.nlm.nih.gov/pubmed/28757305">characterize the brains of ten individuals in detail</a>. Of course, scanning in the middle of the night raises all sorts of potential issues about sleepiness in the scanner (as well in the control room), so it shouldn’t be undertaken without thoroughly thinking through how to address those issues, but it has been a way that some labs have been able to stretch thin resources much further. I don’t want this to be taken as a suggestion that students be forced to work both day and night; scanning into the wee hours should never be forced upon a student who doesn’t want to do it, and the rest of their work schedule should be reorganized so that they are not literally working day and night. I hope these ideas are useful - If you have other ideas, please leave them in the comments section below! (PS: Thanks to Pat Bissett and Chris Gorgolewski for helpful comments on a draft of this piece!)</p>
+<hr>
+<section id="comments-captured-from-original-post-on-blogger" class="level2">
+<h2 class="anchored" data-anchor-id="comments-captured-from-original-post-on-blogger">2 comments captured from <a href="https://russpoldrack.blogspot.com/2018/04/how-can-one-do-reproducible-science.html">original post</a> on Blogger</h2>
+<p><strong>Unknown said on 2018-04-18</strong></p>
+<p>For suggestion #3, StudySwap was created to provide a solution to this problem: https://osf.io/view/StudySwap/</p>
+<p><strong>Russ Poldrack said on 2018-04-18</strong></p>
+<p>thanks!</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

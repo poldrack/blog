@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Russ Poldrack">
-<meta name="dcterms.date" content="2010-10-14">
+<meta name="dcterms.date" content="2011-07-01">
 
-<title>Russ Poldrack’s blog - Welcome</title>
+<title>Russ Poldrack’s blog - My analysis of OHBM 2011 abstracts</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -105,7 +105,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Welcome</h1>
+      <h1 class="title">My analysis of OHBM 2011 abstracts</h1>
                       </div>
   </div>
     
@@ -122,7 +122,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">October 14, 2010</p>
+        <p class="date">July 1, 2011</p>
       </div>
     </div>
     
@@ -140,8 +140,8 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<p><em>This was originally posted on blogger <a href="https://russpoldrack.blogspot.com/2010/10/welcome.html">here</a></em>.</p>
-<p>I’ve set up this personal site so I will have a place to spout off about the various things that I think about that don’t fall under the purview of the my <a href="http://www.huffingtonpost.com/russell-poldrack">Huffington Post blog</a> (which is focused on implications of research for daily living) or the <a href="http://blog.cognitiveatlas.org/">Cognitive Atlas blog</a> (which is focused on topics related to our <a href="http://www.cognitiveatlas.org/">Cognitive Atlas project</a>). I will probably focus mostly on science issues, productivity tools and workflows, and food and travel.</p>
+<p><em>This was originally posted on blogger <a href="https://russpoldrack.blogspot.com/2011/07/my-analysis-of-ohbm-2011-abstracts.html">here</a></em>.</p>
+<p>As the past chair of the <a href="http://www.humanbrainmapping.org/i4a/pages/index.cfm?pageid=1">Organization for Human Brain Mapping</a> (which just ended its <a href="http://www.humanbrainmapping.org/i4a/pages/index.cfm?pageID=3419">2011 meeting</a> in Quebec City), I was tasked with giving the “Meeting Highlights” talk which traditionally closes the meeting. It’s a pretty daunting challenge to summarize an entire meeting with such little time for preparation, so I took the tack of doing lots of mining on the full text of the abstracts prior to the meeting. My entire wrap-up talk is available <a href="http://euphoria.clm.utexas.edu/shared/Poldrack_OHBMWrapup_June2011.pdf">here</a>; below I present the main results of my text mining, along with some additional analyses that didn’t make it into the talk.Overall meeting stats: Number of Abstracts 2230 Number of Unique Authors 7622 Mean # of abstracts/author 1.64 (max=33) Mean # of authors/abstract 5.6 (max=41) Authorship distribution:The OHBM is known for being an international organization, and the authorship data confirm this. In order to visualize the authorship data, I used the Google Maps API to identify the latitude/longitude for each affiliation in the authorship list. This was successful for more than 90% of the abstracts. These latitude/longitude values were uploaded into Google Fusion Tables, from which I exported a KML file (<a href="https://github.com/poldrack/ohbm2011/blob/master/latlng.kml?raw=true">available here</a>) which I then opened in Google Earth. (That’s a lot of Google!)Using Google Earth I then created a tour that circled the globe, showing all of the author locations on a path from Quebec City to Beijing (location of the 2012 meeting). Here is the video:Each red pin represents the location of an author at the meeting. Authorship networks:Using the abstracts I created a coauthorship network and did some basic analyses on this network (using the <a href="http://networkx.lanl.gov/">Networkx toolbox</a> in Python and the <a href="http://nwb.cns.iu.edu/">Network Workbench</a>). The code and an anonymized version of the graph (in graphml format) are available <a href="https://github.com/poldrack/ohbm2011">via github</a>. Here is an overall view of the network:This shows one giant connected component with 4600 authors (60.3%), along with a large number of much smaller components (the second largest component had 103 authors). Focusing in on the giant component, here is the spring-embedded visualization:Here are the network statistics: Clustering coefficient 0.88 Average degree 8.10 Average shortest path length (giant component only) 6.96 Maximum shortest path length 18 Modularity (giant component only) 0.92 Here is the degree distribution plotted in log space, with a degree distribution for a matched random graph for comparison:The degree distribution has a long tail compared to the random network, which is what one would expect from this kind of network (for background on this kind of analysis, see Mark Newman’s paper <a href="http://arxiv.org/abs/cond-mat/0007214/">The structure of scientific collaboration networks</a>). Using <a href="http://en.wikipedia.org/wiki/PageRank">PageRank centrality</a>, I identified the 10 most central authors in this network (listed with number of abstracts and centrality value):Paul Thompson (33 abstracts: 0.002020)Vince Calhoun (21 abstracts: 0.001816)Arno Villringer (23 abstracts: 0.001756)Arthur Toga (30 abstracts: 0.001625)Yong He (19 abstracts: 0.001416)Peter Fox (26 abstracts: 0.001381)Michael Milham (24 abstracts: 0.001340)Alan Evans (16 abstracts: 0.001318)Robert Turner (23 abstracts: 0.001292)Daniel Margulies (13 abstracts: 0.001194)Content analysis:Using the full text from the articles, I created several tag clouds (using <a href="http://www.wordle.net/">Wordle</a>) to show different aspects of the content. The first was created from the entire abstract text after filtering out standard stop words along with anatomical regions and author names. The second was created using a count of all anatomical terms (from the PubBrain anatomical lexicon):The third was created using a count of all of the terms in the <a href="http://www.cognitiveatlas.org/">Cognitive Atlas</a>lexicon of mental concepts:These tag clouds give a good overview of the major topics at the meeting.If you have other ideas for mining of these data, let me know and I’ll give it a try. I have also done topic modeling using latent Dirichlet allocation, and may get around to writing about that in the future.</p>
 
 
 

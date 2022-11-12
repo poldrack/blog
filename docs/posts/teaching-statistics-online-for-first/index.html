@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.267">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Russ Poldrack">
+<meta name="dcterms.date" content="2021-04-03">
+
+<title>Russ Poldrack’s blog - Teaching statistics online (for the first time)- Lessons learned</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Russ Poldrack’s blog</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="https://profiles.stanford.edu/russell-poldrack">
+ <span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/poldrack"><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://mastodon.online/@Russpoldrack"><i class="bi bi-mastodon" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Teaching statistics online (for the first time)- Lessons learned</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Russ Poldrack </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">April 3, 2021</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<p><em>This was originally posted on blogger <a href="https://russpoldrack.blogspot.com/2021/04/teaching-statistics-online-for-first.html">here</a></em>.</p>
+<p>We just completed the 2021 Winter Quarter at Stanford, and it was my first time to teach my introductory statistics course fully online. The goal of this post is to talk through how it went and the lessons learned. I apologize in advance for the length of this!Course structureThis course (Stats 60/Psych 10) is the pre-calculus version of intro statistics that is meant to serve a broad range of students across the university (including, but certainly not limited to Psychology students), with a roughly even mix of students from each class (freshman through senior). The enrollment this quarter was well over 100 students. This is the fourth time that I have taught the class, but the first time to teach it fully online. We made a number of major changes to accommodate the online format:Modular course structure: We reorganized the course around Canvas modules, each of which was focused on a particular topic and lasted one week. Each module included:Pre-recorded lecture videos (usually 2-3 videos, 10-15 minutes each), with quiz questions embedded (using <a href="https://www.panopto.com/">Panopto</a>) to ensure engagementReadings from my <a href="https://statsthinking21.github.io/statsthinking21-core-site/">open-source textbook</a>A quiz (which had to be completed with 100% correct for credit, and could be retaken as many times as necessary to achieve that score)Every other module included a problem setSome modules included milestones related to the final project, which was an independent data analysis project using openly available data completed in groups of 3-4 students.At any point in the quarter, the students could access the modules for the current week and the following two weeks, which gave them an opportunity to get ahead when needed but also ensured some degree of spaced learning.Fully flipped class: There were no standard lectures during the synchronous class sessions (which met 3 times weekly, 50 minutes per session); pre-recorded lecture videos were provided for each module, and students were required to watch them and complete questions embedded in the videos (using Panopto on Canvas). Students were required to attend at least one of these synchronous sessions, or alternatively to complete a written makeup assignment. The synchronous sessions followed roughly the following organization:Monday: review of core concepts (usually with me drawing on the Zoom whiteboard), and group activitiesWednesday: Live coding, including problem set review in weeks following a problem set deadlineFriday: Answering questions (which students could post to a Google Doc each week) and breakout room activitiesSchedule-driven grading: Inspired by <a href="https://medium.com/@patrickdkwatson/how-to-teach-without-a-classroom-ff6a1f074e90">Patrick Watson’s outstanding post</a>, I decided to move to a schedule-driven grading system, in which students start the quarter with 105 points, and lose 2.5 points for every assignment that they don’t complete (including attendance to at least one course session or completion of a makeup exercise, and attendance at discussion sections). Thus, they always know exactly what their grade is (assuming they do everything else in the quarter). Most grading was for completion; for the problem sets, we ran the submissions through an automated testing system, and students with multiple errors were given a chance to revise their submission. For lecture attendance, students self-reported their attendance; this was doublechecked on occasion against the Zoom logs, with no major discrepancies. The goal in general was to ensure not just completion but mastery of the material.Purpose-built R tutorials: An essential part of the class is learning to perform statistical analyses using R. This is challenging because many of the students in the course have never coded before, and 10 weeks is a very short time to teach this! In past years we have used Datacamp tutorials, but found that they were not well aligned with the specific topics that we were teaching. For this year, I developed a <a href="https://github.com/poldrack/learnr_demos">set of interactive R tutorials</a> (using the awesome <a href="https://rstudio.github.io/learnr/">learnr</a> package) which were specifically built to emphasize the skills that we wanted them to have, with minimal distraction. This also allowed some changes in how we teach R. For example, in recent years we have introduced pipes from the very beginning of teaching the tidyverse, but found that they were very difficult for many students to conceptualize. This year we started with the tidyverse without using pipes (i.e.&nbsp;using strings of individual commands), and only introduced pipes in the last few weeks of the course. Again it’s hard to say since so many things changed, but this change definitely seemed to reduce confusion in the early stages of R learning.Google Colab: In the past we have tried having students install RStudio on their own computers, or using rstudio.cloud for cloud access. However, the former is problematic since many students have Chromebooks that can’t run RStudio, and the latter now charges a substantial amount. We made the choice to try <a href="https://colab.research.google.com/">Google Colab</a>as our coding platform; the ability to run R notebooks is somewhat obscured (<a href="https://towardsdatascience.com/how-to-use-r-in-google-colab-b6e02d736497">they have to be created using a special link</a>) but once created they work well.Problem sets with embedded tests: In the past we have given students a “skeleton” code file that provided them with some scaffolding for their problem sets and ensured that variables have the correct names (so that our automated testing system is less likely to fail). This year, we decided to embed a test into each code cell in the skeleton, so that students could immediately see for each cell whether they had correctly completed the problem (primarily by testing to see that their variables had the correct sizes, types, and values), giving them a “good job!” message when they did so. Sections: In the past, we have used discussion sections for concept review in addition to working on the group projects. This year, we decided to dedicate section time solely to working on group projects, given that students often need a lot of time to work on these.Lessons learned:Overall I thought the new course structure worked incredibly well, and the students seemed to agree. On the question of “How much did you learn from this course”, more than 2/3 of the students said “A lot” or “A great deal”. We didn’t obtain these overall ratings last year due to the COVID onset, but in 2019 only 45% rated the course at this level, suggesting that we have significantly improved the student experience (that difference is significant at p&lt;.001 if you need statistical evidence :-). Clearly one needs to take any such comparison with a grain of salt since many things have changed, but the qualitative comments from the students were also markedly more positive this year. In what follows I will paraphrase some of the comments from the student evaluations. Modular structure: Students appreciated the organization of the modules; the course received very high ratings on the question “How organized was this course?”, with 95% saying “Extremely organized” or “Very organized”; only 59% of students rated it that well in the 2019. Flipped class structure: I felt that the ability to talk with students and walk through problems on the digital whiteboard was really effective at helping me understand which concepts they were struggling with. In addition, I was able to address the questions that they had posted to the weekly Google Doc. This allowed me to spend much more time focusing on concepts that needed additional attention. In addition, the chat function in Zoom seemed to help encourage questions from students who might have been reticent to speak up in class before.Schedule-driven grading: Perhaps not surprisingly, the students loved the grading system; on the course evaluation question of “How did you feel about the schedule-driven grading system?”, 90% of students were strongly positive and 7% were weakly positive. A number of students mentioned in their comments that the grading system allowed them “focus on learning” rather than worrying about their grade. This was particularly noted by students with no coding experience, for whom the course can be quite daunting. The only major complaints regarding the grading system were from students who thought that they would have been more engaged in the course if they had been graded for accuracy rather than completion.Purpose-built tutorials: These were a big hit, in particular because they directly matched the problem sets; whereas in previous years students might have to search online resources to find how to solve a particular problem, this year every coding concept that they needed for the problem sets had been covered in the tutorials. And they didn’t have to learn a lot of R concepts that would never show up in class.Colab: In comparison with previous years, there was very little friction around the coding platform; in general Colab worked very well. In particular, it made it very easy to share my notebooks from class, so that students could view them and create a copy that they could edit themselves if they wanted. 77% of students rated Colab positively, and only 5% rated it negatively. The main complaint was that it doesn’t allow simultaneous editing of a notebook by multiple people (ala Google Docs), which occasionally led to collisions if students were simultaneously editing a shared notebook. I will definitely choose Colab again for next year’s class!I would say that the one thing that didn’t work well was breakout rooms during the synchronous class sessions; the majority of students rated them as Moderately useful (33%), Slightly useful (17%), or Not useful at all (18%). One major issue is that many students would apparently join the breakout room but then keep their cameras turned off and not participate in the discussion; occasionally this would lead a student to be the only responsive individual out of 5 or 6 people in a breakout room. Let’s hope that when I teach it again in Winter 2022 that we will be in person and not over Zoom…That said, one thing that I think actually worked better over Zoom than in person was live coding. It was certainly better for me as the instructor, because I was able to use my large monitor and have more information at my fingertips (sharing only my notebook screen) than I can using my laptop in a lecture hall where my entire monitor is in view. In addition, it’s much easier for students to type coding answers into the chat window than it is to say them out loud. I am definitely going to consider a hybrid going forward where the live coding sessions are held remotely even if the remainder of the class is held in person.In closing, I have to give a shout out to my awesome teaching team, who helped make the experience of teaching this class so seamless and enjoyable, as well as to my students who remained engaged despite the challenges of online learning. I’m looking forward to teaching the course in person next year, but I think that the experience of taking it fully online will definitely improve the course even when it’s back in a physical classroom.</p>
+<hr>
+<section id="comments-captured-from-original-post-on-blogger" class="level2">
+<h2 class="anchored" data-anchor-id="comments-captured-from-original-post-on-blogger">1 comments captured from <a href="https://russpoldrack.blogspot.com/2021/04/teaching-statistics-online-for-first.html">original post</a> on Blogger</h2>
+<p><strong>JohnKubie said on 2021-04-03</strong></p>
+<p>Sounds terrific. Trying to see how our my institution (medical school) can apply some of these ideas. In particular, which aspects of remote instruction are better than previous approaches.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

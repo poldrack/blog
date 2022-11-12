@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.267">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Russ Poldrack">
+<meta name="dcterms.date" content="2019-12-12">
+
+<title>Russ Poldrack’s blog - Computing models for a neuroimaging lab</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Russ Poldrack’s blog</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="https://profiles.stanford.edu/russell-poldrack">
+ <span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/poldrack"><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://mastodon.online/@Russpoldrack"><i class="bi bi-mastodon" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Computing models for a neuroimaging lab</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Russ Poldrack </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">December 12, 2019</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<p><em>This was originally posted on blogger <a href="https://russpoldrack.blogspot.com/2019/12/computing-models-for-neuroimaging-lab.html">here</a></em>.</p>
+<p>I had a conversation with a colleague recently about how to set up computing for a new neuroimaging lab. I thought that it might be useful for other new investigators to hear the various models that we discussed and my view of their pros and cons. My guess is that many of the same issues are relevant for other types of labs outside of neuroimaging as well - let me know in the comments below if you have further thoughts or suggestions!The simplest model: Personal computers on premiseThe simplest model is for each researcher in the lab to have their own workstation (or laptop) on which all of their data live and all of their computing is performed.Pros: Easy to implement Freedom: Each researcher can do whatever they want (within the bounds of the institution’s IT policies) as they have complete control over their machine. NOTE: I have heard of institutions that do not allow anyone on campus to have administrative rights over their own personal computer. Before one ever agrees to take a position, I would suggest inquiring about the IT policies and make sure that they don’t prevent this; if they do, then ask the chair to add language to your offer letter than explicitly provides you with an exception to that policy. Otherwise you will be completely at the mercy of the IT staff — and this kind of power breeds the worst behavior in those staff. More generally, you should discuss IT issues with people at an institution before accepting any job offer, preferably with current students and postdocs, since they will be more likely to be honest about the challenges. Cons: Lack of scalability: Once they need to run more jobs than there are cores on the machine, the researcher could end up waiting a very long time for those jobs to complete, and/or crash the machine due to resource insufficiency. These systems also generally have limited disk space.Underuse: One can of course buy workstations with lots of cores/RAM/storage, which can help address the previous point to some degree. However, then one is paying a lot of money for resources that will sit underutilized most of the time. Admin issues: Individual researchers are responsible for managing their own systems. This means that each researcher in the lab will likely be using different versions of each software package, unless some kind of standardized container system is implemented. This also means that each researcher needs to spend their precious time dealing with software installation issues, etc, unless there is a dedicated system admin, which costs $$$$. Risk: The systems used for these kinds of operations are generally commodity-level systems, which are more likely to fail compared to enterprise-level systems (discussed below). Unless the lab has a strict policy for backup or duplication (e.g.&nbsp;on Dropbox or Box) then it’s almost certain that at some point data will be lost. There is also a non-zero risk of personal computers being stolen or lost.Verdict: I don’t think this is generally a good model for any serious lab. The only strong reason that I could see for having local workstations for data analysis is if one’s analysis requires a substantial amount of graphics-intensive manual interaction.Virtual machines in the cloudUnder this model, researchers in the lab house their data on a commercial cloud service, and spin up virtual machines on that service as needed for data analysis purposes.Pros: Flexibility: This model allows the researcher to allocate just enough resources for the job at hand. For the smallest jobs, one can sometimes get by with the free resources available from these providers (I will use Amazon Web Services[AWS] as an example here since it’s the one I’m most familiar with). On AWS, one can obtain a free t2.micro instance (with 1 GB RAM and 1 virtual CPU); this will not be enough to do any real analysis, but could be sufficient for many other functions such as working with files. At the other end, one can also allocate a c5.24xlarge instance with 96 virtual CPUs and 192 GiB of RAM for about $4/hour. This range of resources should encompass the needs of many labs. Similarly, on the space side, you can scale your storage space in an effectively unlimited way. Resource-efficiency: You only use what you pay for. Energy-efficiency: Cloud services are thought to be much more energy-efficient compared to on-premise computers, due to their higher degree of utilization (i.e.&nbsp;they are not sitting idle most of the time) and the fact that they often obtain their power from renewable resources. AWS estimates that cloud computing can reduce carbon emissions by up to 88% compared to on-premise computers.Resilience: Occasionally the hardware on a cloud VM goes out. When this happens, you simply spin up a new one — no hardware replacement cost.Cons: Administration and training: Since most scientists will not have experience spinning up and administering cloud systems, there will be some necessary training to make this work well; preferably, one would have access to a system administrator with cloud experience. Researchers need to be taught, for example, to shut down expensive instances after using them, lest the costs begin to skyrocket. Costs: Whereas the cost of a physical computer is one-time, cloud computing has ongoing costs. If one is going to be a serious user of cloud computing, then they will need to deeply understand the cost structure of their cloud computing services. For example, there are often substantial costs to upload and download data from the cloud, in addition to the costs of the resources themselves. Cloud users should also implement billing alarms, particularly to catch any cases where credentials are compromised. In one instance in my lab, criminals obtained our credentials (which were accidentally checked into Github) and spent more than $20,000 within about a day; this was subsequently refunded by AWS, but it caused substantial anxiety and extra work. Scalability: There will be many cases in which an analysis cannot be feasibly run on a single cloud instance in reasonable time (e.g., running fMRIprep on a large dataset). One can scale beyond single instances, but this requires a substantial amount of work, and is really only feasible if one has a serious cloud engineer involved. It is simply not a good use of a scientist’s time to figure out how to spin up and manage a larger cluster on a cloud service; I know this because I’ve done it, and those are many hours that I will never get back that could have been used to do something more productive (like play guitar, do yoga, or go for a nice long walk). One could of course spin up many individual instances and manually run jobs across them, but this requires a lot of human effort, and there are better solutions available, as I outline below. Verdict: For a relatively small lab with limited analysis needs and reasonably strong system administration skills or support, I think this is a good solution. Be very careful with your credentials!Server under a desk (SUAD)Another approach for many labs is a single powerful on-premise server shared by multiple researchers in the lab, usually located in some out-of-the-way location so that no one (hopefully) spills coffee on it or walks away with it. It will often have a commodity-grade disk array attached to it for storage.Pros:Flexibilty: As with the on-premise PC model, the administrator has full control.Cons:Basically all the same cons as the on-premise PC model, with the added con that it’s a single point of failure for the entire lab.Same scaling issues as cloud VMsAdministration: I know that there are numerous labs where either faculty or graduate students are responsible for server administration. This is a terrible idea! Mostly because it’s time they could better spend reading, writing, exercising, or simply having a fun conversation over coffee.Verdict: Don’t do it unless you or your grad students really enjoy spending your time diagnosing file system errors and tuning firewall rules.Cluster in a closet (CIIC)This is a common model for researchers who have outgrown the single-computer-per-researcher or SUAD model. It’s the model that we followed when I was a faculty member at UCLA, and that I initially planned to follow when I moved from UCLA to UT Austin in 2009. The CIIC model generally involves a rack-mounted system with some number of compute nodes and a disk array for storage. Usually shoved in a closet that is really too small to accommodate it.Pros:Scalability: CIIC generally allows for much better scalability. With current systems, one can pack more than 1000 compute cores alongside substantial storage within a single full-height rack. Another big difference that allows much greater scalability is the use of a scheduling (or queueing) system, which allows jobs to be submitted and then run as resources are available. Thus, one can submit many more jobs than the cluster can handle at any one time, and the scheduler will deal with this gracefully. It also prevents problems that happen often under the SUAD model when multiple users log in and start jobs on the server and overrun its resources. Flexibility: One can configure one’s cluster however they want, because they will have administrative control over the system.Cons: Administration:Administering a cluster well is a complex job that needs a professional system administrator, not a scientist moonlighting as an sysadmin; again, I know this because I lived it. In particular, as a cluster gets bigger, the temptation for criminals to compromise it grows as well, and only a professional sysadmin is going to be able to keep up with cybercriminals who break into systems for a living.Infrastructure: Even a reasonably sized cluster requires substantial infrastructure that is unlikely to be met by a random closet in the lab. The first is power: A substantial cluster will likely need a dedicated power line to supply it. The second is cooling: Computers generate lots of heat, to a degree that most regular rooms will not be able to handle. On more than one occasion we had to shut down the cluster at UCLA because of overheating, and this can also impact the life of the computer’s components. The third is fire suppression: If a fire starts in the closet, you don’t want regular sprinklers dumping a bunch of water on your precious cluster. It is for all of these reasons that many campuses are no longer allowing clusters in campus buildings, instead moving them to custom-built data centers that can address all of these needs.Cost: The cost of purchasing and running a cluster can be high. Commercial-level hardware is expensive, and when things break you have to find money to replace them, because your team and colleagues will have come to rely on them. Training: Once you move to a cluster with more than a single node, you will need to use a scheduler to submit and run jobs. This requires a change in mindset about how to do computing, and some researchers find it annoying at first. It definitely requires letting go of a certain level of control, which is aversive for many people. Interactivity: It can be more challenging to do interactive work on a remote cluster than on a local workstation, particularly if it is highly graphics-intensive work. One usually interacts with these systems using a remote window system (like VNC), and these often don’t perform very well.Verdict: Unless you have the resources and a good sysadmin, I’d shy way from running your own cluster. If you are going to do so, locate it in a campus data center rather than in a closet.High-performance computing centersWhen I moved from UCLA to UT Austin in 2009, I had initially planned to set up my own CIIC. However, once I arrived I realized that I had another alternative, which was to instead take advantage of the resources at the Texas Advanced Computing Center, which is the local high-performance computing (HPC) center (that also happens to be world-class). My lab did all of its fMRI analyses using the TACC systems, and I have never looked back. Since moving to Stanford, we now also take advantage of the cluster at the Stanford Research Computing Facility, while also continuing to use the TACC resources as well.Pros: Scalability: Depending on the resources available at one’s HPC center, one can often scale well beyond the resources of any individual lab. For example, on the Frontera cluster at TACC (its newest, currently the <a href="https://www.top500.org/system/179607">5th most powerful supercomputer on Earth</a>), a user can request up to 512 nodes (28,672 cores) for up to 48 hrs. That’s a lot of Freesurfer runs. The use of scheduling systems also makes the management of large jobs much easier. These centers also usually make large-scale storage available for a reasonable cost. Professional management: HPC centers employ professional system administrators whose expertise lies in making these systems work well and fixing them when they break. And the best part is that you generally don’t have to pay their salary! (At least not directly). Cons: Training: The efficient usage of HPC resources requires that researchers learn a new model for computing, and a new set of tools required for job submission and management. For individuals with solid UNIX skills this is rarely a problem, but for researchers without those skills it can be a substantial lift. Control: Individual users will not have administrative control (“root”) on HPC systems, which limits the kinds of changes one can make to the system. Conversely, the administrators may decide to make changes that impact one’s research (e.g.&nbsp;software upgrades). Sharing: Using HPC systems requires good citizenship, since the system is being shared by many users. Most importantly: Users must <em>never</em> run jobs on the login node, as tempting as that might sometimes be. Waiting: Sometimes the queues will become filled up and one may have to wait a day for one’s jobs to run (especially just before the annual Supercomputing conference). Access: If one’s institution has an HPC center, then one may have access to those resources. However, not all such centers are built alike. I’ve been lucky to work with centers at Texas and Stanford that really want researchers to succeed. However, I have heard horror stories at other institutions, particularly regarding HPC administrators who see users as an annoyance rather than as customers, or who have a very inflexible approach to system usage that doesn’t accomodate user needs. For researchers without local HPC access, there may be national resources that one can gain access to, such as the XSEDE network in the US. Verdict: For a lab like mine with significant computing needs, I think that HPC is the only way to go, assuming that one has access to a good HPC center. Once you live through the growing pains, it will free you up to do much larger things and stop worrying about your cluster overheating because an intruder is using it to mine Bitcoin.These are of course just my opinions, and I’m sure others will disagree. Please leave your thoughts in the comment section below!</p>
+<hr>
+<section id="comments-captured-from-original-post-on-blogger" class="level2">
+<h2 class="anchored" data-anchor-id="comments-captured-from-original-post-on-blogger">3 comments captured from <a href="https://russpoldrack.blogspot.com/2019/12/computing-models-for-neuroimaging-lab.html">original post</a> on Blogger</h2>
+<p><strong>v said on 2019-12-12</strong></p>
+<p>Don’t forget to mention research software engineers and/or web developers!</p>
+<p><strong>Russ Poldrack said on 2019-12-12</strong></p>
+<p>They are necessary regardless of what model one chooses!</p>
+<p><strong>Joke said on 2019-12-17</strong></p>
+<p>Using HPC also teaches valuable skills for a future outside of academia !</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.267">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Russ Poldrack">
+<meta name="dcterms.date" content="2016-02-26">
+
+<title>Russ Poldrack’s blog - Reproducibility and quantitative training in psychology</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Russ Poldrack’s blog</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="https://profiles.stanford.edu/russell-poldrack">
+ <span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/poldrack"><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://mastodon.online/@Russpoldrack"><i class="bi bi-mastodon" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Reproducibility and quantitative training in psychology</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Russ Poldrack </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">February 26, 2016</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<p><em>This was originally posted on blogger <a href="https://russpoldrack.blogspot.com/2016/02/reproducibility-and-quantitative.html">here</a></em>.</p>
+<p>We had a great Town Hall Meeting of our department earlier this week, which was focused on issues around reproducibility, which <a href="http://babieslearninglanguage.blogspot.com/2016/02/town-hall-on-methodological-issues.html">Mike Frank has already discussed in his blog</a>. A number of the questions that were raised by both faculty and graduate students centered around training, and this has gotten many of us thinking about how we should update our quantitive training to address these concerns. Currently the graduate statistics course is fairly standard, covering basic topics in probability and statistics including basic probability theory, sampling distributions, null hypothesis testing, general(ized) linear models (regression, ANOVA), and mixed models, with exercises done primarily using R. While many of these topics remain essential for psychologists and neuroscientists, it’s equally clear that there are a number of other topics that we might want to cover that are highly relevant to issues of reproducibility:the statistics of reproducibility (e.g., implications of power for predictive validity; <a href="http://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.0020124">Ioannidis, 2005</a>)Bayesian estimation and inferencebias/variance tradeoffs and regularizationgeneralization and cross-validationmodel-fitting and model comparisonThere are also a number of topics that are clearly related to reproducibility but fall more squarely under the topic of “software hygiene”:data managementcode validation and testingversion controlreproducible workflows (e.g., virtualization/containerization)literate programmingI would love to hear your thoughts about what a 21st century graduate statistics course in psychology/neuroscience should cover- please leave comments below!</p>
+<hr>
+<section id="comments-captured-from-original-post-on-blogger" class="level2">
+<h2 class="anchored" data-anchor-id="comments-captured-from-original-post-on-blogger">15 comments captured from <a href="https://russpoldrack.blogspot.com/2016/02/reproducibility-and-quantitative.html">original post</a> on Blogger</h2>
+<p><strong>Dr Cyril Pernet said on 2016-02-26</strong></p>
+<p>Literate programming is an interesting thing - it doesn’t need to be taught, it can be demonstrated. For instance, make a R script to demonstrate the logic of linear modeling (http://www.sbirc.ed.ac.uk/cyril/glm/GLM_lectures.html). If we start teaching such that the lectures are literate programming (rather than boring ppt), students get use to<br>- express/convert a though in a bit of code<br>- relates code to maths (seriously, density functions, integrals, kernels etc are easier to understand using a computer - http://www.ted.com/talks/conrad_wolfram_teaching_kids_real_math_with_computers?language=en)<br>- become accustom to literate programming<br><br>Maybe instead of an essay, we should ask to express and solved a problem that way. I don’t need to convince you that sharing data and code is the only way .. and teaching student using literate programming make them use to do that (I think)</p>
+<p><strong>Song said on 2016-02-26</strong></p>
+<p>Am planning course specifically in open science/reproducible research right now at Karolinska Institutet. Have proposed as learning objectives that students should be able to: <br>• Account for reproducibility problems in research because of issues such as small sample sizes, bias, and incomprehensive methods reporting<br>• Recognize questionable research practices, discuss their prevalence, identify methods to discourage their use<br>• Find and apply field-specific guidelines for reporting research with different designs<br>• Preregister research protocols and assess others’ preregistered research protocols<br>• Identify suitable repositories and publish scientific works using self-archiving<br>• Annotate, describe, anonymize, and openly publish scientific data and analysis code<br>• Find, acquire, and analyse data published openly in different formats<br>• Integrate and accumulate data across studies (meta-analysis)<br><br>*Sorry for delete and re-post, trying to sign with my name. /G Nilsonne</p>
+<p><strong>Chris Gorgolewski said on 2016-02-26</strong></p>
+<p>While in grad school I tough (together with +Mike Hull) a 12 week class called "Introduction to Research Computing". We spoke about practical software skills such as python programming, version control, automatic figure generation, MATLAB code optimization and others.<br><br>If I were to teach it now I would try to add something about reproducibility, notebooks, and pitfals of p-hacking.<br><br>https://github.com/chrisfilo/IntroductionToResearchComputing</p>
+<p><strong>Michael Frank said on 2016-02-26</strong></p>
+<p>This is great, Russ. I think it might be helpful to have students begin grad school with an orientation to some of the computing concepts, and then move towards methodological and statistical concepts along the way. Imagine a first-year sequence that walked students through how to set up a project and the appropriate environment for managing data/analysis/writeup, taught them how to code up the experiment and run it, and then introduced the statistical techniques necessary for analysis. This sequence would proceeding in parallel with their development of a first-year project, so they’d presumably get both course projects and research experience and have an opportunity to apply the same toolset to both…</p>
+<p><strong>Unknown said on 2016-02-26</strong></p>
+<p>I agree with Cyril. I see the topics listed as "software hygiene" as a vehicle to teaching the other topics; however, that might be a product of having to learn it on-the-fly during/post graduate training. <br><br>I think putting students in practical situations is like immersion learning for these issues. "Your regression model is highly significant? Show me it can generalize to an individual that isn’t included in the model. How? Use cross-validation. It doesn’t work? Why?" <br><br>In my view, researchers should all be knowledgeable of these techniques and issues, but many choose to collaborate with "data scientists" or statisticians, who have all the technical and math expertise but often know little about how to appropriately use the data. It seems clear that powerpoint-laden lectures divulging theory are not enough, but how do you determine how much programming should be taught concurrent to stats? I think the 21st century shift in data practices and communication demand these skills, but they may not belong in a graduate stats-specific course. I found that there were highly variable level of programming skill in my graduate cohort, so it would likely slow progress down quite a bit. Specifically, the statistics of reproducibility, generalization/cross-validation, model-fitting, &amp; and model comparison would be my top votes for inclusion in a stats focused course. That being said, I think it would be a really good idea to include the programming aspects in a pre-requisite, complimentary, or supplementary type course. <br><br><br><br></p>
+<p><strong>Unknown said on 2016-02-26</strong></p>
+<p>I work a few of those topics into my course on regression. There are a few points in general regression topics where you can talk about bias/variance tradeoffs naturally. We also deal with differences between structural models and predictive models, and bring up how you might make different choices (and have different tests) depending on your goal. At the end, we have a whole day devoted to not making mistakes, why coding is better than spreadsheets, etc. So, I think it’s possible to fold those topics into your current courses for the most part. It just takes an effort to re-tailor those topics to practices now (vs ones our ancestors were obsessed with like sequential F tests).<br><br>Updating this further based on Cyril’s point: I also have R code for every lecture that goes over multiple ways of calculating key statistics (not using lm’s output) such as using algebraic formulas, calculating solely from the variance-covariance matrix, matrix algebra, etc. This serves two goals of having them (1) learn some computational skills and (2) understand the formulas and principles by working with them. <br><br>So it is definitely possible to teach almost everything off that list be folding into the current classes.<br><br>Fox’s book "Applied Regression Analysis and Generalized Linear Models" makes the incorporation of these concepts somewhat seamless, in my opinion. His chapters on Robust Regression, Bootstrapping, and Model Selection, Averaging, and Validation are a gold mine for these basic concepts that other books don’t have (or don’t do as well)</p>
+<p><strong>david said on 2016-02-26</strong></p>
+<p>Good paper on "software hygiene." Something to consider for assigned readings:<br><br>http://web.stanford.edu/~gentzkow/research/CodeAndData.pdf</p>
+<p><strong>tal said on 2016-02-26</strong></p>
+<p>When I was at Colorado, I taught a graduate project-building course that amounted to something like "scientific computing for psychologists". I think the students liked it, and some very nice projects came out of it… but the main limitation from my perspective was the huge variability in technical ability coming into the course. Some students were basically software developers, and others had never seen for-loops before. I agree with Michael Frank that the optimal approach would require multiple courses.<br><br>My preferred sequence would probably be: (i) Programming for psychologists (which students can test out of), which, in addition to standard stuff (data types, control structures, etc.), would cover programming concepts and applications relevant to psychologists (e.g., a lot of text processing, numerical computing, and stimulus presentation, not much about algorithms, systems, etc.). (ii) Scientific computing for psychologists, which would assume basic programming ability, and focus on all the stuff you’re talking about here (version control, interactive notebooks, reproducibility, etc.), and get students to a point where they’re managing all their data/analysis/code properly. Then (iii) Project-building, where students carry out technically-oriented projects that focus on their own particular area of research. The last course wouldn’t be mandatory, but perhaps strongly encouraged.<br><br>Of course this leave aside the question of what to do with conventional stats and/or research methods. Having 4 required methods courses seems like a bit much, but I’m not sure how much one could really compress things down. The reality is that there’s just more to learn these days, if you don’t already have a strong technical background. (So maybe a more realistic solution is to only accept students who come in with many of these skills.)</p>
+<p><strong>practiCal fMRI said on 2016-02-26</strong></p>
+<p>Hi Russ, where do the issues of experimental design and systematic errors come in? Power is important but won’t fix a bad study design or confounding variables.</p>
+<p><strong>Russ Poldrack said on 2016-02-26</strong></p>
+<p>Good point - some of the issues around study design would presumably be discussed in courses that are more area-specific, since they will often vary across different research domains, though certainly there are many issues (e.g., confounding) that are general and should probably be discussed here.</p>
+<p><strong>MD said on 2016-02-26</strong></p>
+<p>In my own stats course, I’ve been covering issues related to reproducibility and questionable research practices for about 5 years. Each year, I give our incoming graduate students a questionnaire about scientific practices and the crisis of confidence. What I find most striking, is that (a) most students (~60%-80% in any given year) report that they’ve worked in labs where researchers engaged in optional stopping, flexibility of analysis, and HARKing, and (b) almost none of them have heard of the crisis of confidence or issues surrounding reproducibility prior to coming to graduate school. Graduate school shouldn’t be their first introduction. In case anyone is wondering, our students come from a variety of institutions ranging from small liberal arts colleges to Ivy league and equivalent research institutions.</p>
+<p><strong>Unknown said on 2016-02-26</strong></p>
+<p>Not mentioned above, but very much needed, is training in tools for building theories. Relatedly, psychology would benefit from a priori theory building (and analysis). And places to publish this sort of work. – Pat Shafto</p>
+<p><strong>Unknown said on 2016-02-26</strong></p>
+<p>Hi Russ, interesting ideas. My own take is that the most important thing is to help students think more critically about data analysis. In a way, the goal would be to teach statistics not as a set of disparate techniques (ANOVA, regression, etc.) but as "statistical modeling", a way to model data so that we can understand patterns and structure in data. This is all very natural if one embraces a Bayesian mindset, and different analyses map to different ways of modeling the data. I’m reading a book right now that might be the best book ever in terms of basic exposition and didactical approach to this: http://xcelab.net/rm/statistical-rethinking/ The book is so well written that I’ve enjoyed reading even Chapter 1! It goes without saying that students need to learn to program; if not in R (it’s rather cryptic), some version of Python, or even a probabilistic language like Stan.</p>
+<p><strong>Brad Wyble said on 2016-02-26</strong></p>
+<p>I think it’s a shame that custom permutation tests aren’t taught routinely in grad stats. They can be written easily in any language, and are so flexible that they can sometimes find a way to test for differences that traditional approaches aren’t well suited for.</p>
+<p><strong>v said on 2016-02-26</strong></p>
+<p>There should be a required entry level course for all new graduate students that covers the basics, and then a higher department (eg, research computing) should offer regular advising and office hours for all students, faculty, and staff.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

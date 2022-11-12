@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Russ Poldrack">
-<meta name="dcterms.date" content="2010-10-14">
+<meta name="dcterms.date" content="2018-01-22">
 
-<title>Russ Poldrack’s blog - Welcome</title>
+<title>Russ Poldrack’s blog - Defaults in R can make debugging incredibly hard for beginners</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -105,7 +105,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Welcome</h1>
+      <h1 class="title">Defaults in R can make debugging incredibly hard for beginners</h1>
                       </div>
   </div>
     
@@ -122,7 +122,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">October 14, 2010</p>
+        <p class="date">January 22, 2018</p>
       </div>
     </div>
     
@@ -140,10 +140,16 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<p><em>This was originally posted on blogger <a href="https://russpoldrack.blogspot.com/2010/10/welcome.html">here</a></em>.</p>
-<p>I’ve set up this personal site so I will have a place to spout off about the various things that I think about that don’t fall under the purview of the my <a href="http://www.huffingtonpost.com/russell-poldrack">Huffington Post blog</a> (which is focused on implications of research for daily living) or the <a href="http://blog.cognitiveatlas.org/">Cognitive Atlas blog</a> (which is focused on topics related to our <a href="http://www.cognitiveatlas.org/">Cognitive Atlas project</a>). I will probably focus mostly on science issues, productivity tools and workflows, and food and travel.</p>
+<p><em>This was originally posted on blogger <a href="https://russpoldrack.blogspot.com/2018/01/defaults-in-r-can-make-debugging.html">here</a></em>.</p>
+<p>I am teaching a <a href="https://psych10.github.io/">new undergraduate statistics class at Stanford</a>, and an important part of the course is teaching students to run their own analyses using R/RStudio. Most of the students have never coded before, and debugging turns out to be one of the major challenges. Working with students over the last few days I have found that a couple of the default features in R can combine to make debugging very difficult on occasion. Changing these defaults could have a big impact on new users’ early learning experiences.One of the datasets that we use is the NHANES dataset via the NHANES library. Over the last few days several students have experienced very strange problems, where the NHANES data frame doesn’t contain the appropriate data, even after restarting R and reloading the NHANES library. It turns out that this is due to several “features” in R: Users are asked when exiting whether to save the workspace image, and the default is to save it.The global workspace (saved in ~/.RData) is by default automatically loaded upon starting R.When a package is loaded that contains a data object, this object is masked by any object in the global workspace with the same name. Here is an example. First I load the NHANES library, and check that the NHANES data frame contains the appropriate data. &gt; library(NHANES) &gt; head(NHANES) ID SurveyYr Gender Age AgeDecade AgeMonths Race1 Race3 Education MaritalStatus HHIncome HHIncomeMid 1 51624 2009_10 male 34 30-39 409 White <na> High School Married 25000-34999 30000 2 51624 2009_10 male 34 30-39 409 White <na> High School Married 25000-34999 30000 3 51624 2009_10 male 34 30-39 409 White <na> High School Married 25000-34999 30000 4 51625 2009_10 male 4 0-9 49 Other <na> <na> <na> 20000-24999 22500 5 51630 2009_10 female 49 40-49 596 White <na> Some College LivePartner 35000-44999 40000 6 51638 2009_10 male 9 0-9 115 White <na> <na> <na> 75000-99999 87500 Now let’s say that I accidentally set NHANES to some other value: NHANES=NA &gt; NHANES [1] NA Now I quit RStudio, clicking the default “Save” option to save the workspace, and then restart RStudio. I get a message telling me that the workspace was loaded, and I see that my altered version of the NHANES variable still exists. I would think that reloading the NHANES library should fix this, but this is what happens: &gt; library(NHANES) Attaching package: ‘NHANES’ The following object is masked <em>by</em> ‘.GlobalEnv’: NHANES &gt; NHANES [1] NA That is, objects in the global environment take precedence over newly loaded objects. If one didn’t know how to parse that warning they would have no idea that this loading operation is having no effect. The only way rid ourselves of this broken variable is either restart R after removing ~/.RData, or remove the variable from the global workspace: &gt; rm(NHANES, envir = globalenv()) &gt; library(NHANES) &gt; head(NHANES) ID SurveyYr Gender Age AgeDecade AgeMonths Race1 Race3 Education MaritalStatus HHIncome HHIncomeMid 1 51624 2009_10 male 34 30-39 409 White <na> High School Married 25000-34999 30000 2 51624 2009_10 male 34 30-39 409 White <na> High School Married 25000-34999 30000 3 51624 2009_10 male 34 30-39 409 White <na> High School Married 25000-34999 30000 4 51625 2009_10 male 4 0-9 49 Other <na> <na> <na> 20000-24999 22500 5 51630 2009_10 female 49 40-49 596 White <na> Some College LivePartner 35000-44999 40000 6 51638 2009_10 male 9 0-9 115 White <na> <na> <na> 75000-99999 87500 This seems like a combination of really problematic default behaviors to me: automatically saving and then loading the global workspace by default, and masking objects loaded from libraries with objects in the workspace. Together they have resulted in hours of unnecessary confusion and frustration for my students, at exactly the point in their learning curve where it is most problematic to do so.I have one simple suggestion for the R developers: Please turn off automatic loading of the workspace by default. It would be as simple as changing the default on one radio box, and it would potentially save new users lots of time and frustration. Until that happens, beginning R users should do the following: Under the Preferences panel (the General Tab in R), unselect the “Restore .RData into workspace on startup” option. I would also recommend setting the “Save workspace to .RData on exit” preference to “Never”, since I find that I generally only restart R when I want the entire workspace cleared out, so this option will never be of use to me.</na></na></na></na></na></na></na></na></na></na></na></na></na></na></na></na></na></na></na></na></p>
+<hr>
+<section id="comments-captured-from-original-post-on-blogger" class="level2">
+<h2 class="anchored" data-anchor-id="comments-captured-from-original-post-on-blogger">1 comments captured from <a href="https://russpoldrack.blogspot.com/2018/01/defaults-in-r-can-make-debugging.html">original post</a> on Blogger</h2>
+<p><strong>muswellbrook said on 2018-01-22</strong></p>
+<p>I agree. I found exactly the same problem when I first started using R and quickly discovered the solutions you describe here. But the problem is the quirky default behavior. And I suspect most experienced R users don’t even think about it anymore (because they have changed their default settings). But it is annoying and especially so when you discover there is no appropriate command to clear the workspace and the recommended method is to restart R</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

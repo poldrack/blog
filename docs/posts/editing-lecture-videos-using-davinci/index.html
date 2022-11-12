@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Russ Poldrack">
-<meta name="dcterms.date" content="2010-10-14">
+<meta name="dcterms.date" content="2020-11-29">
 
-<title>Russ Poldrack’s blog - Welcome</title>
+<title>Russ Poldrack’s blog - Editing lecture videos using Davinci Resolve</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -105,7 +105,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Welcome</h1>
+      <h1 class="title">Editing lecture videos using Davinci Resolve</h1>
                       </div>
   </div>
     
@@ -122,7 +122,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">October 14, 2010</p>
+        <p class="date">November 29, 2020</p>
       </div>
     </div>
     
@@ -140,8 +140,8 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<p><em>This was originally posted on blogger <a href="https://russpoldrack.blogspot.com/2010/10/welcome.html">here</a></em>.</p>
-<p>I’ve set up this personal site so I will have a place to spout off about the various things that I think about that don’t fall under the purview of the my <a href="http://www.huffingtonpost.com/russell-poldrack">Huffington Post blog</a> (which is focused on implications of research for daily living) or the <a href="http://blog.cognitiveatlas.org/">Cognitive Atlas blog</a> (which is focused on topics related to our <a href="http://www.cognitiveatlas.org/">Cognitive Atlas project</a>). I will probably focus mostly on science issues, productivity tools and workflows, and food and travel.</p>
+<p><em>This was originally posted on blogger <a href="https://russpoldrack.blogspot.com/2020/11/editing-lecture-videos-using-davinci.html">here</a></em>.</p>
+<p>In my previous post I described a simple workflow for generating lecture videos. One limitation of this workflow is that when slides are shared as a virtual background in Zoom (which I like to do in order to keep my webcam image on the screen next to the slides), the cursor is not captured in the video recording. Since I occasionally need to highlight a portion of the image, this means that I need to edit the video files to add that highlighting. To do this I decided to use <a href="https://www.blackmagicdesign.com/products/davinciresolve/">DaVinci Resolve</a> 16, which is a powerful video editing tool that is available for free. It has a bit of a learning curve, but the power appears to be well worth it; here I will show my workflow for adding annotations to a lecture video. I’m mostly doing this so that I remember how to do it next time around, but hopefully it might also be useful for others.In this example I am discussing Z-scores, and I want to highlight the location of the Z = 0 (i.e.&nbsp;the mean) and Z =1 (one standard deviation) on the normal distribution. After opening DaVinci Resolve, I start a new project for my video, which will open a browser for the media in my project. I then import my lecture video using File -&gt; Import File -&gt; Import Media; it will ask whether you want to change the video settings to match the current project, which I accept. The video will now appear in the media browser in the top left; drag the video onto the timeline browser in the lower leftmost portion of the screen, which will add it to your timeline. Now go to the “Edit” window by clicking the Edit button at the bottom (third icon from the left). Now you will see your video in the timeline at the bottom, along with a preview window at the top:Now let’s add our annotation. First, find the location in the video where you want to add the annotation. Then, right click in the area just to the left of the timeline, and add a new track:Now open the Effects library using the tab at the top of the screen (if it’s not already open), and navigate to the Effects panel under the Toolbox option. You should see an option for “Adjustment Clip” - grab this and drag it to the location on your video that you had identified.Then, select and right click on the Adjustment Clip that was just created, and choose “Open in Fusion Page”:This will open the Fusion editor, which is a powerful tool for all sorts of video edits. You will see a section in the bottom left showing two nodes for MediaIn1 and MediaOut1; what you need to do is add a Paint node into the line connecting those nodes, which you can do by right-clicking onto the line and Adding a Paint tool node:You will now see details about the Paint tool in the inspector to the top right. Here is perhaps the most important thing to know here: The tool that is opened by default (the “Multistroke” tool) doesn’t do what we want it to do here, which is to create a graphic that remains on the screen for the length of our Adjustment clip. To do that, select the simple “Stroke” tool, which for me is the fourth icon in the panel above the preview:You should then see a set of controls for Stroke1 in the Inspector to the top right:Choose the color for your annotation along with changing any other features of interest; I will use a red painbrush, so I click on the color chooser and pick a red color. Then you simply start painting in the preview window:Now go back to the editing window, and adjust the length of the Adjustment Clip as needed for your video. You can add as many additional annotations as needed using this same method. Occasionally I realize that I have said something incorrect in the video. Rather than re-recording or trying to edit the video itself, I simply add a title to the screen nothing that I misspoke. This is easy using the Title feature from the Effects library in the editing page:Once you are done, simply export the video using the QuickExport feature and you are ready to go!</p>
 
 
 
