@@ -26,6 +26,20 @@ TODOs
 2. Add pure python way to convert HTML to markdown
 """
 
+from bs4 import BeautifulSoup
+
+# from https://stackoverflow.com/questions/42412251/python-strip-string-from-html-tags-leave-links-but-in-changed-form
+def cleanComment(comment):
+    comment = comment.replace('&nbsp;', ' ')
+    soup = BeautifulSoup(comment, 'html.parser')
+    for m in soup.find_all('a'):
+        if str(m) in comment:
+            if not m['href'].startswith("#"):
+                    comment = comment.replace(str(m), f"[{m.__dict__['next_element']}]({m['href']})")
+    soup = BeautifulSoup(comment, 'html.parser')
+    comment = soup.get_text()
+    return comment
+
 import sys
 from pathlib import Path
 import os
@@ -45,9 +59,11 @@ if __name__ == "__main__":
  #   tag: str = typer.Option("legacy-blogger", help="Tag to add to frontmatter"),
  #   show_original: bool = typer.Option(True, help="Link MD files to original articles"),
 
-    input_file = Path('blog-11-01-2022.xml')
+    input_file = Path('blog-11-12-2022.xml')
     print(f"Parsing data from '{input_file}'")
-    output_dir = Path('output')
+    output_dir = Path('../posts')
+    if not output_dir.exists():
+        output_dir.mkdir()
     tag = 'legacy-blogger'
     show_original = True
 
@@ -82,7 +98,8 @@ if __name__ == "__main__":
     print(f"Writing {len(posts)} blogger posts to markdown files")
     for key, value in posts.items():
         # Get a MD filename from the original HTML URL
-        filename = value['published'].split('T')[0] + '-' + os.path.basename(key).replace(".html", ".md")
+        filename = value['published'].split('T')[0] + '-' + os.path.basename(key).replace(".html", "")
+        postname = filename[11:].replace('.md', '')
         # print('\n',link, data['feed']['link'], filename)
         # Catches some of the configuration elements
         if len(filename.strip()) == 0:
@@ -91,28 +108,26 @@ if __name__ == "__main__":
         if filename.startswith("p-"):
             continue
         filename = filename.replace("/", "-")
-        # Get a list of tags
-        tags = [x["term"] for x in value.tags]
-        tags = [
-            x
-            for x in tags
-            if x != "https://schemas.google.com/blogger/2008/kind#post"
-        ]
-        # Add the tag option to list of tags
-        tags.append(tag)
+
         frontmatter = {
-            "date": value["published"],
-            "published": True,
-            "slug": filename.replace(".md", ""),
-            "tags": tags,
-            "time_to_read": 5,
+            "date": value["published"].split("T")[0].replace("-", "/"),
             "title": value["title"],
-            "description": "",
+            "author": "Russ Poldrack"
         }
-        with open(f"{output_dir.joinpath(filename)}", "w") as f:
+        postdir = output_dir / postname
+        if not postdir.exists():
+            postdir.mkdir()
+        
+        with open(postdir / 'index.qmd', "w") as f:
             # Set the frontmatter
             f.write("---\n")
-            f.write(yaml.dump(frontmatter))
+
+            #for k, v in frontmatter.items():
+            #    f.write(f'{k}: {v}\n')
+            postdate = frontmatter['date']
+            posttitle = frontmatter['title'].replace(':', '-')
+            #f.write(yaml.dump(frontmatter))
+            f.write(f'author: "Russ Poldrack"\ndate: {postdate}\ntitle: {posttitle}\n')
             f.write("---\n\n")
             if show_original:
                 # Set a link to the original content
@@ -120,7 +135,7 @@ if __name__ == "__main__":
                     f"*This was originally posted on blogger [here]({key})*.\n\n"
                 )
             # Write the HTML, TODO: consider converting to markdown
-            f.write(value["summary"])
+            f.write(cleanComment(value["summary"]))
             # If any comments, add them
             if value["comments"]:
                 f.write("\n\n---\n\n")
