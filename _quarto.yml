@@ -5,6 +5,7 @@ project:
 
 website:
   title: "Russ Poldrack's blog"
+  google-analytics: "G-R0530E6SNQ"
   navbar:
     right:
       - text: "About"
