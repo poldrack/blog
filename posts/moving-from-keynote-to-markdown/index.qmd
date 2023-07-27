@@ -1,0 +1,49 @@
+---
+author: "Russ Poldrack"
+date: 2022/11/13
+title: Moving from Keynote to Markdown-based presentations
+---
+
+
+Those of you who know me are already aware that I tend to make life much more difficult for myself than I need to. This is the first of what I expect to be a series of blog posts about my recent move towards a more fully open source software stack.
+
+I have used Keynote as my presentation platform for more than a decade, but have at various points toyed with moving to a text-based solution, for two main reasons:
+
+1. I have repeatedly considered moving to Linux on the desktop, having become increasingly tired of the annoyances of the MacOS platform. Most of the old blockers of that move are now out of the way, with Linux versions or web-based alternatives for nearly all of my important tools.  However, my investment in Keynote was always a deal-breaker for that move.^[I realize that I could in theory run Keynote on the web through iCloud, but presentations are something that I need to be able to work on and access even when I am offline.]
+2. I have a number of talks that I give repeatedly, which morph over time.  I generallly end up saving Keynote files for each, which are often huge (due to the embedded images) and difficult to compare.  I wanted to be able to take advantage of the same version control tools I use for my code to track versioning of my presentations as well.
+
+### Converting slides from Keynote to markdown
+
+I first wanted to make sure that it was possible to programnmatically convert my existing Keynote files into markdown; I knew that it wouldn't be perfect, but felt that I at least needed a way to get the text out along with the image files.  I looked at [keynote-parser](https://github.com/psobot/keynote-parser), which generates a YAML representation of a Keynote file, but the structure of the representation was just too hairy for me to envision using to generate a Markdown representation. I ended up deciding to export my Keynote files to Powerpoint, and then convert them to Markdown using [pptx2md](https://github.com/ssine/pptx2md).  This tool generates a nice (if basic) Markdown representation of the presentation, including creating and linking to images (though some images don't seem to make it through - haven't yet dug into figuring out why).  Given this, I was ready to choose a platform.
+
+### Choosing a Markdown-based slide platform
+
+There are of course many different platforms that one can use to generate presentations from text. I decided to settle on Markdown, as I'm quite comfortable with it and it seems to be the most popular alternative these days.  (I've previously built slides using Beamer but I just don't love the visual styling, wheras the Markdown-based tools generally let one use CSS to style things pretty flexibly.)
+
+When I choose a new platform, I am looking for a few important features:
+
+- A strong open source development community.  The last thing I want is to invest heavily in a platform only to have it wither away.
+- A large user community, which translates into lots of examples and online discussion of problems, not to mention the impact of [Linus' law](https://en.wikipedia.org/wiki/Linus%27s_law).   
+- Good documentation (which is increasingly important when the community is smaller).
+
+I [posted on Mastodon](https://mastodon.online/@Russpoldrack/109308722432343604) to solicit suggestions from the community, and the discussion was very helpful.  Lots of different platforms were suggested, but there seemed to be a particularly high level of interest in [Quarto](https://quarto.org/), and after some exploration (particularly comparing Quarto with [slidev](https://sli.dev/)) I ended up going with reveal-based presentations in Quarto. 
+
+Quarto is backed by [Posit] (https://posit.co/), which is the company formerly known as RStudio.  I've been very impressed with their work in the past (e.g. I used RStudio and RMarkdown/bookdown to generate my [online statistics book](https://statsthinking21.org)), and a glimpse at the Quarto github page showed lots of active development and many contributors.  
+
+Another nice feature of Quarto is that it supports many different types of publishing, including web sites and blogs. I had just recently decided to move my personal blog from Blogger to Github Pages, so the ability to use the same platform for both talks and blog posts was appealing.  More on the blog in a future post...
+
+## Building my first talk using Quarto + reveal.js
+
+I decided to take the plunge and build my presentation for an upcoming talk (a relatively short one at ~15 minutes) using Quarto + reveal.js.  My usual MO when moving into a new area like this is to poke around and find some good examples that I like, and then use those as the basis for my first attempt. In this case, the [Quarto gallery](https://quarto.org/docs/gallery/#presentations) had a numnber of nice presentations, with linked code, that were helpful in getting started.  I also had to learn a bit of CSS, and [a suggestion from my colleage Nell on Mastodon](https://mastodon.social/@Nell/109314762343287670) pointed me to [https://web.dev/learn/css/](https://web.dev/learn/css/) which I found very helpful to build a mental model of how CSS works.
+
+With all this in place, I started building the talk. The main challenge that I found was to go beyond the very basic styling that one gets from a standard Markdown presentation, such as changing image/text position size in a precise way. After a substantial bit of futzing I learned how to use CSS to get pretty much what I wanted.  It's definitely more work than just dragging things around in Keynote, but I am hopeful that 1) I will get better at it with practice, and 2) the payoff will be worth it.
+
+If you'd like to have a look at the talk (which is still a work in progress), the source code is [here](https://github.com/poldrack/talks-nipreps/tree/main/talk) and the rendered talk can be found [here](https://poldrack.github.io/talks-nipreps/talk/NiPreps.html#/title-slide).  One of the great things about hosting the talk on github is that it makes it very easy to share the latest version.
+
+### Generating PDF files
+
+I also like to have a PDF backup for all of my talks in case something goes wrong.  There is no seemingly simple way to automatically render a talk using reveal.js from Quarto into PDF, but I found that it was easily done using the [decktape](https://github.com/astefanutti/decktape) package.  
+
+I'll have more to say in upcoming posts about how I am automating and organizing my talks.
+
+

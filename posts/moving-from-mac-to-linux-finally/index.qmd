@@ -1,0 +1,81 @@
+---
+author: "Russ Poldrack"
+date: 2022/12/04
+title: Making the move from Mac to Linux on the desktop - finally!
+---
+
+
+I have long toyed with the idea of moving to Linux as my desktop environment.  I've used Linux on servers for several decades, but I have never been able to make the move from Mac to Linux for my main desktop system; I've tried several times, but each time there were just too many pain points for it to stick. Perhaps the main pain point has been that all of my talks have been developed using Keynote on the Mac, and committing to move all of them to a more Linux-friendly platform just seemed like a bridge too far.
+
+I apologize in advance for the length of this post - the TL;DR is that it's been a remarkably smooth move so far.
+
+### Why leave the Mac?
+
+When OS X came out I was ecstatic that I could finally have a UNIX back end with a usable GUI.  However, several changes over the last few years have left me increasingly annoyed with how Apple treats its power users. 
+
+- The user interface changes regularly, in ways that seem to be trying to look more like iOS but ultimately just degreade the user experience.  [I am not the first person to point this out.](https://www.theatlantic.com/technology/archive/2015/07/why-is-itunes-so-bad/399833/).  For example,  there are two different file saving workflows across different applications, such that in some apps the "Save As" button is not available (at least not obviously).  
+-  The security model causes friction by blocking attempts to install any non-reviewed software, and with excessive requirements to approve many different services required by software, requiring many trips to the Security preferences panel.
+- Some things have just stopped working on the M1 platform, in particular all of the virtual machine apps for OSX on M1 seem to be broken to some degree or another.
+
+Another thing that has changed since the last time I tried to make the move is that nearly all of the major pieces of software that I rely upon for daily producitivity are now either available natively on Linux (e.g. 1Password, Slack, Zoom) or available as web services.  While I still don't want to move all of my work to cloud services, the availability of Keynote via iCloud and Word via the Office365 web portal was enough to ensure that I wouldn't be completely lost if I needed to get back to them.  
+
+A third and very important change that emboldened me to move away from the Mac was my recent move to a Markdown-based workflow for presentations, as I described in more detail [here](https://poldrack.github.io/blog/posts/moving-from-keynote-to-markdown/), which freed me from the Keynote tether.
+
+Finally, and foremost, as an advocate of open science and open source I felt like I finally needed to walk the walk.  
+
+### Getting started
+
+Given all this, I decided to take the plunge and buy a Linux laptop that could serve as my main productivity system.  I usually carry a laptop back and forth between my home office and main office; In each office I have a USB-C monitor, bluetooth keyboard and mouse, and a high-quality microphone for Zoom calls and recordings.  Because I carry the laptop everywhere I wanted something relatively light, with a 14" monitor and lots of USB-C ports.  I also wanted to get a system with Linux pre-installed, since I figured that would reduce the number of hardware-related hiccups. After some searching, I decided to go for the Lenovo ThinkPad X1 with Ubuntu Linux pre-installed. 
+
+When the system arrived, the first thing I did was to hand it off to the Stanford IT team, who set up encryption for me (as required by Stanford).  I generally like doing my own system administration, but setting up encryption on Linux is an ugly process that I didn't want to mess with, so I was happy that they agreed to do it for me.  A few days later the system was ready for me to start using it.
+
+I went for the latest Ubuntu LTS version (22.04) but after hitting an early hitch with sound on my external monitor I decided to upgrade the kernel to the latest release of Version 5.  This was super easy using the mainline installer, and it seems to have served me well (so far).
+
+### Plug and pray
+
+When I had previously toyed with Linux on the desktop I found that many of my devices just didn't work.  The experience this time around has been dramatically different: Pretty much everything has just worked!  This includes the following devices that worked with no added drivers:
+
+- Dell USB-C monitor and soundbar
+- Audio-Technica ATR-2100X and Shure MV-7 USB-C microphones
+- Panasonic Lumix G7 camera (used as a webcam via the Elegato CamLink 4K)
+
+Some additional items worked but required additional drivers or tweaks:
+
+- LG USB-C monitor/camera/speaker (required kernel upgrade for sound to work properly)
+- Epson FastFoto scanner (required Epson drivers and tweaking of settings file to insert the Wifi IP address for the scanner)
+- Logitech Bluetooth keyboard and mouse (required some [manual tweaking of bluetooth and USB settings](https://askubuntu.com/questions/1303731/how-to-change-bluetooth-timeout-settings-for-bluetooth-mouse) to prevent lagging)
+
+Within a couple of days I had a fully working setup that I was using in place of my Mac.
+
+### Productivity stack
+
+A number of my producitivity apps (Slack, 1Password, Notion, Todoist, Joplin, VSCode, RStudio) have native versions that worked straight out of the box, but in some cases I had to make tweaks for existing parts of my productivity stack to work, or find replacements.  Since much of my stack relies upon web apps (Gmail, Google Docs, etc), I will focus on those parts that used apps on the Mac for which I needed an alternative, or required tweaks to work.
+
+**Zoom**.  Zoom worked pretty much straight out of the box, but the screen sharing options are limited when using the default Wayland window server, so I [changed my window server from Wayland to XOrg](https://beebom.com/how-switch-between-wayland-xorg-ubuntu/). Since then I've had numerous successful Zoom calls with no problems yet (fingers crossed...)
+
+**Presentations**.  As I noted above, I recently made the move to Markdown-based presentations.  To the degree that I still need to access my older Keynote presentations (which I'm sure I will for a while), it turns out that they can be opened using LibreOffice Impress (with some disruption of the slide layout, on par with converting from Keynote to Powerpoint). Discovering this was a total game-changer, as it means I don't have to move all of my keynote files into iCloud to use the web version of Keynote.
+
+**Word**.  It's impossible to get away from Microsoft Word files.  I have installed LibreOffice though I don't yet know how good this will be as a Word replacement. As a backup I have the Office365.com web-based version of Word through my university.  It will remain to be seen which of those turns out to be more useful.
+
+**Letter-writing**.  One of my main uses for Word in the past was to write letters of recommendation/support on my Stanford letterhead. I decided to try out a Markdown-based approach for this as well, adapting [an approach](https://github.com/Microbiology/Helpful_Lab_Materials/tree/master/W
+ritingCoverLetter) that uses a LaTeX template with Pandoc to render a letter created in Markdown.  This seems to work well so far; once I clean up my code I will post it to my Github account, as others might find it useful.
+
+**Signing PDFs**.  I generally used Preview to work witih PDFs on the Mac, and a common use case was adding an image with my signature.  LibreOffice Draw seems to work OK for this though I've already encountered one PDF that it garbled; fortunately in that case I was able to use the Acrobat Web Client to add the signature (through my Creative Cloud subscription).
+
+**Screenshots**.  I take a lot of screenshots, and the MacOS Shift-Command-4 hotkey was very useful to be able to take a shot of a particular part of the screen.  However, there is a really nice command-line replacement in Linux, which is the `import` command from the ImageMagick toolbox.  This command saves a screenshot of a particular portion of the screen directly to a named file, which actually streamlines my workflow compared to the Mac (where I had to separately save a file to the intended location).  
+
+**Alfred**.  One of the most important utilities for me on the Mac was Alfred, which I used both as an app hotkey and as a way to store snippets of text that I reuse (e.g. canned email responses).  Fortunately I was able to find a replacement called Albert, which does a good job of storing snippets, as well as having many other features that I've yet to explore.
+
+
+### Things I miss so far
+
+**Mac hardware**.  A major reason that I have always stuck with Mac is the hardware user experience. Even when the hardware has had issues, their laptops have always seemed to have the best usabilty of any I have seen. I've used a couple of Dell laptops at various points, and their keyboard/touchpad experience was absolutely horrible in comparison to the Mac.  The ThinkPad is defintely better, but still nowhere as nice as my M1 Macbook Pro.  If it was possible to run Linux effectively on the M1 then I would have definitely gone that way, but it seems that it's just too much of an experimental project right now.
+
+**Messages**. I hate typing messages on my phone, so I usually use the Messages app on OS X to send iMessages.  There doesn't seem to be a web interface to iMessages or a replacement app for Linux, so I'm out of luck there. I'm probably going to use WhatsApp more frequently since they have a web interface.
+
+**QuickLook**.  When I am attaching a file to an email, I want to be really sure that it's the right one before I send it. One great feature of OSX is the ability to hit the space bar and see a preview of a file's contents within the file chooser. The Ubuntu Files app has this feature when looking at a directory, but the feature does't seem to be present in the file choosers that one uses to select a file, at least within Firefox.  I'll keep my eyes out for a tool that enables this.
+
+**Google Drive access in the terminal**. I like to work at the command line when I am moving files around, and often do this in my Google Drive space.  On OSX the terminal automatically exposes the Google Drive space as a regular file system.  On Linux, Google Drive shows up as a filesystem in the Files browser, but in the terminal it shows up an as object store, and one requires additional tools to work with the objects as files. I will probably keep a Mac around for the few times when I need to do something like this.
+
+
+I'll keep you all posted as the journey continues!  

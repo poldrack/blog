@@ -1,0 +1,73 @@
+---
+author: "Russ Poldrack"
+date: 2022/11/15
+title: Organizing Markdown-based talks using Github
+---
+
+In my [previous post](https://poldrack.github.io/blog/posts/moving-from-keynote-to-markdown/) I discussed how I had moved from Keynote to a Markdown-based workflow for presentations using [Quarto](https://quarto.org/).  Because I usually have a number of active talks at any point in time, it was important for me to figure out a good way to organize them, so I started by soliciting input through a [post on Mastodon](https://mastodon.online/@Russpoldrack/109326426441313848) about whether to organize them within a single git repository or a per-talk repository.  The guidance was mixed, and I ended up deciding to create a different repository for each talk, primarily because I was worried that a repo with many talks would become bloated and slow.  
+
+### My first Markdown talk
+
+As mentioned in the earlier post, I started by creating a presentation for a short (~15 minute) talk to the BRAIN Initiative informatics group's monthly meeting, about our [NiPreps](https://www.nipreps.org/) project. The repository for the talk is at [https://github.com/poldrack/talks-nipreps](https://github.com/poldrack/talks-nipreps).  If you visit that repo, you will see that there are two folders at the root level.  The *talk* folder contains files to build the talk using Quarto:
+
+```
+% tree talk
+talk
+├── _quarto.yml
+├── images
+│   └── ...
+templates.png
+├── rp-theme.scss
+└── talk.qmd
+```
+
+The contents of `talk/ _quarto.yml`  are:
+
+```
+project:
+  type: website
+  output-dir: ../docs/talk
+```
+
+This causes Quarto to build the project as a web site, and to put it into the talk subdirectory within the main site directory.  For this site to show up online, one has to enable Github Pages for the repository, as follows (under Settings/Pages):
+
+![](pages.png)
+
+### Tagging the finalized talk as a release
+
+Once a talk is completed I would like to keep a snapshot of the code and talk that I can easily resusciate later.  To do this, I generate a Github release for each completed talk, and tag that release using the same version tag that I used to generate the talk.  This will allow me to link the PDF file for the talk with the release file, which I use in the next step.
+
+### Building the associated web site
+
+One of the nice things about moving to Quarto is that it also makes building Markdown-based web sites very easy and also allows embedding Python code to programmatically generate web content.  In this case I don't want anything fancy: basically, I just want a link to the current talk, as well as links to each of the previous versions of the talk.  
+
+To generate this site, I take advantage of the fact that one can run Python directly within the Quarto .qmd file (which is in the `site` subfolder). I use the [GitPython](https://gitpython.readthedocs.io/en/stable/index.html) and [PyGithub](https://pygithub.readthedocs.io/en/latest/) tools to 1) identify the Github repository associated with any particular talk directory, 2) obtain the link for the current talk, and 3) find all of the releases associated with that talk.  From this I can generate a simple web site that looks like this:
+
+![](website.png)
+
+which will be automatically updated every time I run `make all` in the talk directory.
+
+I was also able to take advantage of this organization scheme and toolset to create a [talks page on my personal web site](https://poldrack.github.io/talks) that automatically provides a listing of all of my talks (by searching for all repositories in my Gihub account that match the naming scheme and have a talk file in the proper location).
+
+### Automating the build using a Makefile
+
+I like to automate as much as possible, and my go-to solution is usually the UNIX `make` command.  I generated a Makefile that builds the talk and the web site as well as generating a PDF version of the talk.  The PDF versions are stored with the current tag as their name, so that they will remain easily accessible in the repository after the tag changes (e.g. when I move to a new version of the talk).  
+
+The usual workflow for generating a PDF version of a talk created using Reveal.js is to print the file from within Chrome, but that doesn't lend itself to automation.  Instead I use the [decktape](https://github.com/astefanutti/decktape) tool which is a command line tool for exporting an HTML document to PDF.    Here is the relevant portion of the `Makefile`:
+
+```
+render-pdf:
+        -mkdir docs/pdfs
+        decktape reveal docs/talk/talk.html docs/pdfs/$(TAG).pdf
+        git add docs/pdfs/$(TAG).pdf
+        git commit -m"adding pdf [skip ci]"
+        git push origin main
+```
+
+This uses the tag (defined at the top of the Makefile) to name the PDF file; since this tag is the same as the release tag used when the Github release is generated, it's easy to match up the release and the PDF file, as you saw in the web site above.
+
+## Creating a talk template
+
+Based on the work that I did on this first talk, I created a [template repository](https://github.com/poldrack/talks-template) that can be used to create new talks.  After marking the repository as a template, now I just select it as the template whenever I create a new talk repository in Github, and I will have all of the required pieces in place to get started.
+
+Overall I'm very happy with this workflow so far; I'll continue to post as I learn more.
